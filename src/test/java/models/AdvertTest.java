@@ -3,6 +3,8 @@ package models;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.sql.Timestamp;
+import java.time.Instant;
 import java.util.ArrayList;
 
 import static junit.framework.TestCase.assertEquals;
@@ -108,6 +110,12 @@ public class AdvertTest {
     public void canSetShop() {
         advert.setShop(shop);
         assertEquals(shop, advert.getShop());
+    }
+
+    @Test
+    public void hasTimestamp() {
+        advert = new Advert("Bike", "Very fast bike", 100.00, "/image/bike");
+        assertEquals(Timestamp.from(Instant.now()), advert.getTimeStamp());
     }
 
 

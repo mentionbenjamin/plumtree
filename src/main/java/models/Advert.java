@@ -1,7 +1,11 @@
 package models;
 
 import javax.persistence.*;
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+import java.time.Instant;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -15,6 +19,7 @@ public class Advert {
     private String imagePath;
     private List<CategoryType> categories;
     private Shop shop;
+    private Timestamp timeStamp;
 
     public Advert() {}
 
@@ -24,6 +29,8 @@ public class Advert {
         this.price = price;
         this.imagePath = imagePath;
         this.categories = new ArrayList<CategoryType>();
+        this.timeStamp = Timestamp.from(Instant.now());
+        //.format(new Date());
     }
 
 
@@ -103,6 +110,12 @@ public class Advert {
     }
 
 
+    public Timestamp getTimeStamp() {
+        return timeStamp;
+    }
+    public void setTimeStamp(Timestamp timeStamp) {
+        this.timeStamp = timeStamp;
+    }
 }
 
 
