@@ -14,7 +14,7 @@ public class Advert {
     private double price;
     private String imagePath;
     private List<CategoryType> categories;
-    Shop shop;
+    private Shop shop;
 
     public Advert() {}
 
@@ -74,13 +74,16 @@ public class Advert {
     }
 
 
+    @Column(name = "categories")
     @Enumerated(value = EnumType.STRING)
+    @ElementCollection(targetClass = CategoryType.class)
     public List<CategoryType> getCategories() {
         return categories;
     }
     public void setCategories(List<CategoryType> categories) {
         this.categories = categories;
     }
+
 
     @ManyToOne
     @JoinColumn(name = "shop_id", nullable = false)
@@ -98,6 +101,8 @@ public class Advert {
     public void removeCategory(CategoryType category) {
         this.categories.remove(category);
     }
+
+
 }
 
 
