@@ -71,6 +71,10 @@ public class Advert {
     public void addCategory(CategoryType category) {
         this.categories.add(category);
     }
+
+    public void removeCategory(CategoryType category) {
+        this.categories.remove(category);
+    }
 }
 
 

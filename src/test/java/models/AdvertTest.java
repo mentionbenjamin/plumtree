@@ -82,6 +82,13 @@ public class AdvertTest {
     }
 
     @Test
+    public void canRemoveCategoryFromCategories(){
+        advert.addCategory(CategoryType.FASHION);
+        advert.removeCategory(CategoryType.FASHION);
+        assertEquals(0, advert.getCategories().size());
+    }
+
+    @Test
     public void hasShop() {
         assertEquals(null, advert.getShop());
     }
