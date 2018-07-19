@@ -24,4 +24,24 @@ public class Advert {
     public void setTitle(String title) {
         this.title = title;
     }
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public String getImagePath() {
+        return imagePath;
+    }
+
+    public CategoryType getCategory() {
+        return category;
+    }
+
+    public Shop getShop() {
+        return shop;
+    }
 }

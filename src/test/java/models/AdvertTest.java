@@ -27,4 +27,31 @@ public class AdvertTest {
         assertEquals("Cinelli", advert.getTitle());
     }
 
+    @Test
+    public void hasDescription() {
+        assertEquals("Very fast bike", advert.getDescription());
+    }
+
+    @Test
+    public void hasPrice() {
+        assertEquals(100.00, advert.getPrice(), 0.001);
+    }
+
+    @Test
+    public void hasImagePath() {
+        assertEquals("/image/bike", advert.getImagePath());
+    }
+
+    @Test
+    public void hasCategory() {
+        assertEquals(CategoryType.TRANSPORT, advert.getCategory());
+    }
+
+    @Test
+    public void hasShop() {
+        assertEquals(null, advert.getShop());
+    }
+
+
+
 }
