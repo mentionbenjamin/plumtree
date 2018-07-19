@@ -30,4 +30,8 @@ public class Shop {
     public void setAdverts(List<Advert> adverts) {
         this.adverts = adverts;
     }
+
+    public void addToWallet(double money) {
+        this.wallet += money;
+    }
 }

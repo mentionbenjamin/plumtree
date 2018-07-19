@@ -39,5 +39,11 @@ public class ShopTest {
         assertEquals(advertTest, shop.getAdverts());
     }
 
+    @Test
+    public void canAddToWallet() {
+        shop.addToWallet(9.00);
+        assertEquals(9.00, shop.getWallet(), 0.001);
+    }
+
 
 }
