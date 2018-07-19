@@ -7,6 +7,9 @@ public class Seeds {
 
     public static void seedData() {
 
+        DBHelper.deleteAll(Shop.class);
+        DBHelper.deleteAll(Advert.class);
+
         Shop shop = new Shop("Plumtree");
         DBHelper.save(shop);
 
@@ -21,6 +24,8 @@ public class Seeds {
         DBHelper.update(advert1);
 
         DBHelper.delete(advert1);
+
+
 
     }
 
