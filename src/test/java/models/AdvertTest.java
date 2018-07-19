@@ -115,7 +115,7 @@ public class AdvertTest {
     @Test
     public void hasTimestamp() {
         advert = new Advert("Bike", "Very fast bike", 100.00, "/image/bike");
-        assertEquals(Timestamp.from(Instant.now()), advert.getTimeStamp());
+        assertEquals(Timestamp.from(Instant.now()), advert.getTimestamp());
     }
 
 

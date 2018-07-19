@@ -24,6 +24,9 @@ public class Seeds {
         Advert advert2 = new Advert("Dress", "Very nice dress", 50.00, "/image/dress");
         advert2.setShop(shop);
         DBHelper.save(advert2);
+        Advert advert3 = new Advert("Phone", "Very good phone", 200.00, "/image/phone");
+        advert3.setShop(shop);
+        DBHelper.save(advert3);
 
 
 
@@ -43,6 +46,8 @@ public class Seeds {
         // addAdvertToShop
 //        DBAdvert.addAdvertToShop(advert2, shop);
 
+        // orderByPostedTime
+        List<Advert> orderedAdverts = DBAdvert.orderByPostedTime();
 
 
 

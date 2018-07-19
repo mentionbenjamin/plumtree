@@ -19,7 +19,7 @@ public class Advert {
     private String imagePath;
     private List<CategoryType> categories;
     private Shop shop;
-    private Timestamp timeStamp;
+    private Timestamp timestamp;
 
     public Advert() {}
 
@@ -29,7 +29,7 @@ public class Advert {
         this.price = price;
         this.imagePath = imagePath;
         this.categories = new ArrayList<CategoryType>();
-        this.timeStamp = Timestamp.from(Instant.now());
+        this.timestamp = Timestamp.from(Instant.now());
         //.format(new Date());
     }
 
@@ -110,11 +110,12 @@ public class Advert {
     }
 
 
-    public Timestamp getTimeStamp() {
-        return timeStamp;
+    @Column(name = "posted_time")
+    public Timestamp getTimestamp() {
+        return timestamp;
     }
-    public void setTimeStamp(Timestamp timeStamp) {
-        this.timeStamp = timeStamp;
+    public void setTimestamp(Timestamp timeStamp) {
+        this.timestamp = timeStamp;
     }
 }
 
