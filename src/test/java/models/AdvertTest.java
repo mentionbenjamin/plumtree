@@ -21,5 +21,10 @@ public class AdvertTest {
         assertEquals("Bike", advert.getTitle());
     }
 
+    @Test
+    public void canSetTitle() {
+        advert.setTitle("Cinelli");
+        assertEquals("Cinelli", advert.getTitle());
+    }
 
 }
