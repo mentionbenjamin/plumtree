@@ -1,8 +1,11 @@
 package models;
 
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity
+@Table(name = "shops")
 public class Shop {
 
     private int id;
@@ -19,6 +22,9 @@ public class Shop {
     }
 
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     public int getId() {
         return id;
     }
@@ -26,6 +32,8 @@ public class Shop {
         this.id = id;
     }
 
+
+    @Column(name = "name")
     public String getName() {
         return name;
     }
@@ -33,6 +41,8 @@ public class Shop {
         this.name = name;
     }
 
+
+    @Column(name = "wallet")
     public double getWallet() {
         return wallet;
     }
@@ -41,6 +51,7 @@ public class Shop {
     }
 
 
+    @OneToMany(mappedBy = "shop", fetch = FetchType.LAZY)
     public List<Advert> getAdverts() {
         return adverts;
     }
