@@ -5,16 +5,33 @@ import java.util.List;
 
 public class Shop {
 
+    private int id;
+    private String name;
     private double wallet;
     private List<Advert> adverts;
 
-//    public Shop() {}
+    public Shop() {}
 
-    public Shop() {
+    public Shop(String name) {
+        this.name = name;
         this.adverts = new ArrayList<Advert>();
         this.wallet = 0.0;
     }
 
+
+    public int getId() {
+        return id;
+    }
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public double getWallet() {
         return wallet;

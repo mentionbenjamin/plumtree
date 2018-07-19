@@ -16,9 +16,32 @@ public class ShopTest {
 
     @Before
     public void setup() {
-        this.shop = new Shop();
+        this.shop = new Shop("Plumtree");
         this.advertsTest = new ArrayList<Advert>();
-        this.advert = new Advert("Bike", "Very fast bike", 100.00, "/image/bike");    }
+        this.advert = new Advert("Bike", "Very fast bike", 100.00, "/image/bike");
+    }
+
+    @Test
+    public void hasId() {
+        assertEquals(0, shop.getId());
+    }
+
+    @Test
+    public void canSetId() {
+        shop.setId(5);
+        assertEquals(5, shop.getId());
+    }
+
+    @Test
+    public void hasName() {
+        assertEquals("Plumtree", shop.getName());
+    }
+
+    @Test
+    public void canSetName() {
+        shop.setName("Gumbush");
+        assertEquals("Gumbush", shop.getName());
+    }
 
     @Test
     public void hasWallet() {
