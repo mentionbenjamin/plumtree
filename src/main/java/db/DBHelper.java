@@ -92,9 +92,9 @@ public class DBHelper {
 
 
     // FIND ALL
-    public static <T> List<T> findAll(Class classType) {
+    public static <Type> List<Type> findAll(Class classType) {
         session = HibernateUtil.getSessionFactory().openSession();
-        List<T> results = null;
+        List<Type> results = null;
         try {
             Criteria cr = session.createCriteria(classType);
             results = cr.list();

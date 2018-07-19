@@ -25,6 +25,8 @@ public class Seeds {
         advert2.setShop(shop);
         DBHelper.save(advert2);
 
+
+
         // UPDATE
         advert1.setTitle("Banana");
         DBHelper.update(advert1);
