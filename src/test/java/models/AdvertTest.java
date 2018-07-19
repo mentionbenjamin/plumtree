@@ -33,8 +33,20 @@ public class AdvertTest {
     }
 
     @Test
+    public void canSetDescription() {
+        advert.setDescription("More bike info");
+        assertEquals("More bike info", advert.getDescription());
+    }
+
+    @Test
     public void hasPrice() {
         assertEquals(100.00, advert.getPrice(), 0.001);
+    }
+
+    @Test
+    public void canSetPrice() {
+        advert.setPrice(150.00);
+        assertEquals(150.00, advert.getPrice());
     }
 
     @Test
@@ -43,8 +55,20 @@ public class AdvertTest {
     }
 
     @Test
+    public void canSetImagePath() {
+        advert.setImagePath("/bananas");
+        assertEquals("/bananas", advert.getImagePath());
+    }
+
+    @Test
     public void hasCategory() {
         assertEquals(CategoryType.TRANSPORT, advert.getCategory());
+    }
+
+    @Test
+    public void canSetCategory() {
+        advert.setCategory(CategoryType.TECHNOLOGY);
+        assertEquals(CategoryType.TECHNOLOGY, advert.getCategory());
     }
 
     @Test
@@ -52,6 +76,11 @@ public class AdvertTest {
         assertEquals(null, advert.getShop());
     }
 
+    @Test
+    public void canSetShop() {
+        advert.setShop(shop);
+        assertEquals(shop, advert.getShop());
+    }
 
 
 }
