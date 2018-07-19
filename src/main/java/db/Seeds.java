@@ -9,15 +9,15 @@ public class Seeds {
 
     public static void seedData() {
 
-        // DELETE ALL
-        DBHelper.deleteAll(Shop.class);
+        // deleteAll
         DBHelper.deleteAll(Advert.class);
+        DBHelper.deleteAll(Shop.class);
 
-        // SHOP SEED DATA
+        // shop
         Shop shop = new Shop("Plumtree");
         DBHelper.save(shop);
 
-        // ADVERT SEED DATA
+        // adverts
         Advert advert1 = new Advert("Bike", "Very fast bike", 100.00, "/image/bike");
         advert1.setShop(shop);
         DBHelper.save(advert1);
@@ -27,20 +27,21 @@ public class Seeds {
 
 
 
-        // UPDATE
+        // update
         advert1.setTitle("Banana");
         DBHelper.update(advert1);
 
-        // DELETE
+        // delete
         DBHelper.delete(advert1);
 
-        // FIND ALL
+        // findAll
         List<Advert> foundAdverts = DBHelper.findAll(Advert.class);
 
-        // FIND BY ID
+        // findById
         Advert foundAdvert = DBHelper.findById(Advert.class, advert2.getId());
 
-
+        // addAdvertToShop
+//        DBAdvert.addAdvertToShop(advert2, shop);
 
 
 
