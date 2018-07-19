@@ -1,7 +1,6 @@
 package models;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,6 +16,8 @@ public class Advert {
     private List<CategoryType> categories;
     Shop shop;
 
+    public Advert() {}
+
     public Advert(String title, String description, double price, String imagePath) {
         this.title = title;
         this.description = description;
@@ -26,7 +27,9 @@ public class Advert {
     }
 
 
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     public int getId() {
         return this.id;
     }
@@ -35,6 +38,7 @@ public class Advert {
     }
 
 
+    @Column(name = "title")
     public String getTitle() {
         return this.title;
     }
@@ -43,6 +47,7 @@ public class Advert {
     }
 
 
+    @Column(name = "description")
     public String getDescription() {
         return this.description;
     }
@@ -51,6 +56,7 @@ public class Advert {
     }
 
 
+    @Column(name = "price")
     public double getPrice() {
         return price;
     }
@@ -59,6 +65,7 @@ public class Advert {
     }
 
 
+    @Column(name = "image_path")
     public String getImagePath() {
         return imagePath;
     }
@@ -67,6 +74,7 @@ public class Advert {
     }
 
 
+    @Enumerated(value = EnumType.STRING)
     public List<CategoryType> getCategories() {
         return categories;
     }
@@ -74,7 +82,8 @@ public class Advert {
         this.categories = categories;
     }
 
-
+    @ManyToOne
+    @JoinColumn(name = "shop_id", nullable = false)
     public Shop getShop() {
         return shop;
     }
