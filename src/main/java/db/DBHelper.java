@@ -108,13 +108,13 @@ public class DBHelper {
 
 
     // FIND BY ID
-    public static <T> T findById(Class classType, int id) {
+    public static <Type> Type findById(Class classType, int id) {
         session = HibernateUtil.getSessionFactory().openSession();
-        T result = null;
+        Type result = null;
         try {
             Criteria cr = session.createCriteria(classType);
             cr.add(Restrictions.eq("id", id));
-            result = (T) cr.uniqueResult();
+            result = (Type) cr.uniqueResult();
         } catch (HibernateException e) {
             e.printStackTrace();
         } finally {
