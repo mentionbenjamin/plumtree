@@ -19,6 +19,11 @@ public class ShopTest {
         assertEquals(0.0, shop.getWallet(), 0.001);
     }
 
+    @Test
+    public void canSetWallet() {
+        shop.setWallet(10.00);
+        assertEquals(10.00, shop.getWallet(), 0.001);
+    }
 
 
 }
