@@ -3,6 +3,8 @@ package models;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.ArrayList;
+
 import static junit.framework.TestCase.assertEquals;
 
 public class ShopTest {
@@ -28,6 +30,13 @@ public class ShopTest {
     @Test
     public void hasAdverts() {
         assertEquals(0, shop.getAdverts().size());
+    }
+
+    @Test
+    public void canSetAdverts() {
+        ArrayList<Advert> advertTest = new ArrayList<Advert>();
+        shop.setAdverts(advertTest);
+        assertEquals(advertTest, shop.getAdverts());
     }
 
 
