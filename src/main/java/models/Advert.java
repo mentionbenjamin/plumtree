@@ -68,10 +68,10 @@ public class Advert {
         this.shop = shop;
     }
 
+
     public void addCategory(CategoryType category) {
         this.categories.add(category);
     }
-
     public void removeCategory(CategoryType category) {
         this.categories.remove(category);
     }

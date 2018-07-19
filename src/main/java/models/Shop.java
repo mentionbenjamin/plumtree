@@ -32,15 +32,16 @@ public class Shop {
     }
 
 
-    public void addToWallet(double money) {
-        this.wallet += money;
-    }
     public void addToAdverts(Advert advert) {
         this.adverts.add(advert);
     }
-
-
     public void removeFromAdverts(Advert advert) {
         this.adverts.remove(advert);
     }
+
+
+    public void addToWallet(double money) {
+        this.wallet += money;
+    }
+
 }
