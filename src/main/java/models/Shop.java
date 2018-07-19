@@ -38,4 +38,8 @@ public class Shop {
     public void addToAdverts(Advert advert) {
         this.adverts.add(advert);
     }
+
+    public void removeFromAdverts(Advert advert) {
+        this.adverts.remove(advert);
+    }
 }

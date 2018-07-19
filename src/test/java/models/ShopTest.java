@@ -55,4 +55,11 @@ public class ShopTest {
         assertEquals(1, shop.getAdverts().size());
     }
 
+    @Test
+    public void canRemoveFromAdvertsList() {
+        shop.addToAdverts(advert);
+        shop.removeFromAdverts(advert);
+        assertEquals(0, shop.getAdverts().size());
+    }
+
 }
