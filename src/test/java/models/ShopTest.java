@@ -25,5 +25,10 @@ public class ShopTest {
         assertEquals(10.00, shop.getWallet(), 0.001);
     }
 
+    @Test
+    public void hasAdverts() {
+        assertEquals(0, shop.getAdverts().size());
+    }
+
 
 }
