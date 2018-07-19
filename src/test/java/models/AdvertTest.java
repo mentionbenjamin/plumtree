@@ -3,6 +3,8 @@ package models;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.ArrayList;
+
 import static junit.framework.TestCase.assertEquals;
 
 public class AdvertTest {
@@ -12,7 +14,7 @@ public class AdvertTest {
 
     @Before
     public void setup() {
-        this.advert = new Advert("Bike", "Very fast bike", 100.00, "/image/bike", CategoryType.TRANSPORT);
+        this.advert = new Advert("Bike", "Very fast bike", 100.00, "/image/bike");
         this.shop = new Shop();
     }
 
@@ -61,14 +63,22 @@ public class AdvertTest {
     }
 
     @Test
-    public void hasCategory() {
-        assertEquals(CategoryType.TRANSPORT, advert.getCategory());
+    public void hasCategories() {
+        assertEquals(0, advert.getCategories().size());
     }
 
     @Test
-    public void canSetCategory() {
-        advert.setCategory(CategoryType.TECHNOLOGY);
-        assertEquals(CategoryType.TECHNOLOGY, advert.getCategory());
+    public void canSetCategories() {
+        ArrayList<CategoryType> testCategories = new ArrayList<CategoryType>();
+        testCategories.add(CategoryType.TECHNOLOGY);
+        advert.setCategories(testCategories);
+        assertEquals(1, advert.getCategories().size());
+    }
+
+    @Test
+    public void canAddCategoryToCategories(){
+        advert.addCategory(CategoryType.FASHION);
+        assertEquals(1, advert.getCategories().size());
     }
 
     @Test

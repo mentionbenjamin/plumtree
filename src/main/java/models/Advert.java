@@ -1,20 +1,23 @@
 package models;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Advert {
 
     private String title;
     private String description;
     private double price;
     private String imagePath;
-    CategoryType category;
+    private List<CategoryType> categories;
     Shop shop;
 
-    public Advert(String title, String description, double price, String imagePath, CategoryType category) {
+    public Advert(String title, String description, double price, String imagePath) {
         this.title = title;
         this.description = description;
         this.price = price;
         this.imagePath = imagePath;
-        this.category = category;
+        this.categories = new ArrayList<CategoryType>();
     }
 
 
@@ -50,11 +53,11 @@ public class Advert {
     }
 
 
-    public CategoryType getCategory() {
-        return category;
+    public List<CategoryType> getCategories() {
+        return categories;
     }
-    public void setCategory(CategoryType category) {
-        this.category = category;
+    public void setCategories(List<CategoryType> categories) {
+        this.categories = categories;
     }
 
 
@@ -63,6 +66,10 @@ public class Advert {
     }
     public void setShop(Shop shop) {
         this.shop = shop;
+    }
+
+    public void addCategory(CategoryType category) {
+        this.categories.add(category);
     }
 }
 

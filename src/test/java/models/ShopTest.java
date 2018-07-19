@@ -18,7 +18,7 @@ public class ShopTest {
     public void setup() {
         this.shop = new Shop();
         this.advertsTest = new ArrayList<Advert>();
-        this.advert = new Advert("Bike", "Very fast bike", 100.00, "/image/bike", CategoryType.TRANSPORT);    }
+        this.advert = new Advert("Bike", "Very fast bike", 100.00, "/image/bike");    }
 
     @Test
     public void hasWallet() {
