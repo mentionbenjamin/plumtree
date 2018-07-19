@@ -19,6 +19,17 @@ public class AdvertTest {
     }
 
     @Test
+    public void hasId() {
+        assertEquals(0, advert.getId());
+    }
+
+    @Test
+    public void canSetId() {
+        advert.setId(5);
+        assertEquals(5, advert.getId());
+    }
+
+    @Test
     public void hasTitle() {
         assertEquals("Bike", advert.getTitle());
     }

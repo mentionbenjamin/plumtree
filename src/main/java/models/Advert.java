@@ -1,10 +1,15 @@
 package models;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity
+@Table(name = "adverts")
 public class Advert {
 
+    private int id;
     private String title;
     private String description;
     private double price;
@@ -18,6 +23,15 @@ public class Advert {
         this.price = price;
         this.imagePath = imagePath;
         this.categories = new ArrayList<CategoryType>();
+    }
+
+
+
+    public int getId() {
+        return this.id;
+    }
+    public void setId(int id) {
+        this.id = id;
     }
 
 
