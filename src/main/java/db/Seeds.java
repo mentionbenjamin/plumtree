@@ -1,6 +1,7 @@
 package db;
 
 import models.Advert;
+import models.CategoryType;
 import models.Shop;
 
 import java.util.List;
@@ -26,6 +27,7 @@ public class Seeds {
         DBHelper.save(advert2);
         Advert advert3 = new Advert("Phone", "Very good phone", 200.00, "/image/phone");
         advert3.setShop(shop);
+        advert3.addCategory(CategoryType.TECHNOLOGY);
         DBHelper.save(advert3);
 
 
@@ -49,7 +51,8 @@ public class Seeds {
         // orderByPostedTime
         List<Advert> orderedAdverts = DBAdvert.orderByPostedTime();
 
-
+        // findByCategory
+        List<Advert> foundAdvertsInCategory = DBAdvert.findByCategory(CategoryType.TECHNOLOGY);
 
     }
 
