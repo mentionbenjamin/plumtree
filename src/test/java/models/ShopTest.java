@@ -4,16 +4,21 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import static junit.framework.TestCase.assertEquals;
 
 public class ShopTest {
 
     Shop shop;
+    List<Advert> advertsTest;
+    Advert advert;
 
     @Before
     public void setup() {
         this.shop = new Shop();
+        this.advertsTest = new ArrayList<Advert>();
+        this.advert = new Advert();
     }
 
     @Test
@@ -34,9 +39,8 @@ public class ShopTest {
 
     @Test
     public void canSetAdverts() {
-        ArrayList<Advert> advertTest = new ArrayList<Advert>();
-        shop.setAdverts(advertTest);
-        assertEquals(advertTest, shop.getAdverts());
+        shop.setAdverts(advertsTest);
+        assertEquals(advertsTest, shop.getAdverts());
     }
 
     @Test
@@ -45,5 +49,10 @@ public class ShopTest {
         assertEquals(9.00, shop.getWallet(), 0.001);
     }
 
+    @Test
+    public void canAddToAdvertsList() {
+        shop.addToAdverts(advert);
+        assertEquals(1, shop.getAdverts().size());
+    }
 
 }
