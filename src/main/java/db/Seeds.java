@@ -4,6 +4,7 @@ import models.Advert;
 import models.CategoryType;
 import models.Shop;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class Seeds {
@@ -53,6 +54,9 @@ public class Seeds {
 
         // findByCategory
         List<Advert> foundAdvertsInCategory = DBAdvert.findByCategory(CategoryType.TECHNOLOGY);
+
+//        runs through the categorytype enum and creates a list filled with all of it's values
+//        List<CategoryType> categories = Arrays.asList(CategoryType.values());
 
 
     }

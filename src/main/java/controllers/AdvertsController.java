@@ -6,6 +6,7 @@ import models.CategoryType;
 import spark.ModelAndView;
 import spark.template.velocity.VelocityTemplateEngine;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -35,6 +36,19 @@ public class AdvertsController {
 
 
 
+        // Create Advert
+        get("/adverts/new", (req, res) -> {
+            HashMap<String, Object> model = new HashMap<>();
+
+            List<CategoryType> categories = Arrays.asList(CategoryType.values());
+            model.put("categories", categories);
+            model.put("template", "templates/adverts/create.vtl");
+
+            return new ModelAndView(model, "templates/layout.vtl");
+        }, velocityTemplateEngine);
+
+
+
         // View Advert
         get("/adverts/:id", (req, res) -> {
             HashMap<String, Object> model = new HashMap<>();
@@ -47,21 +61,6 @@ public class AdvertsController {
 
             return new ModelAndView(model, "templates/layout.vtl");
         }, velocityTemplateEngine);
-
-
-
-        // Create Advert
-        get("/adverts/new", (req, res) -> {
-            HashMap<String, Object> model = new HashMap<>();
-
-            List<CategoryType> categories = DBHelper.findAll(CategoryType.class);
-
-
-
-            return new ModelAndView(model, "templates/layout.vtl");
-        }, velocityTemplateEngine);
-
-
 
         // create new advert
         //
