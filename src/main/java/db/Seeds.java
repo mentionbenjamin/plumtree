@@ -22,10 +22,10 @@ public class Seeds {
         Advert advert1 = new Advert("Bike", "Very fast bike", 100.00, "/images/bike1.jpg");
         advert1.setShop(shop);
         DBHelper.save(advert1);
-        Advert advert2 = new Advert("Dress", "Very nice dress", 50.00, "/image/dress");
+        Advert advert2 = new Advert("Dress", "Very nice dress", 50.00, "/images/dress1.jpg");
         advert2.setShop(shop);
         DBHelper.save(advert2);
-        Advert advert3 = new Advert("Phone", "Very good phone", 200.00, "/image/phone");
+        Advert advert3 = new Advert("Phone", "Very good phone", 200.00, "/images/phone1.jpg");
         advert3.setShop(shop);
         advert3.addCategory(CategoryType.TECHNOLOGY);
         DBHelper.save(advert3);

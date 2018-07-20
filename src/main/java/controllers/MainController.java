@@ -17,7 +17,7 @@ public class MainController {
         VelocityTemplateEngine velocityTemplateEngine = new VelocityTemplateEngine();
 
         staticFileLocation("/public"); //must be above any extra controllers and seed data
-//        AdvertsController advertsController = new AdvertsController();
+        AdvertsController advertsController = new AdvertsController();
         Seeds.seedData();
 
 

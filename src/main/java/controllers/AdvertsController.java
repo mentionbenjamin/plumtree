@@ -21,6 +21,7 @@ public class AdvertsController {
 
         VelocityTemplateEngine velocityTemplateEngine = new VelocityTemplateEngine();
 
+        // Adverts
         get("/adverts", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
 
@@ -33,6 +34,18 @@ public class AdvertsController {
 
 
 
+        // View Advert
+        get("/adverts/:id", (req, res) -> {
+            HashMap<String, Object> model = new HashMap<>();
+
+            int advertId = Integer.parseInt(req.params(":id"));
+            Advert advert = DBHelper.findById(Advert.class, advertId);
+
+            model.put("template", "templates/adverts/show.vtl");
+            model.put("advert", advert);
+
+            return new ModelAndView(model, "templates/layout.vtl");
+        }, velocityTemplateEngine);
 
 
 
