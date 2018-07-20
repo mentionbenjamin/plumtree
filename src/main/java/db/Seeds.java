@@ -54,6 +54,7 @@ public class Seeds {
         // findByCategory
         List<Advert> foundAdvertsInCategory = DBAdvert.findByCategory(CategoryType.TECHNOLOGY);
 
+
     }
 
 

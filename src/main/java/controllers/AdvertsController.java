@@ -2,6 +2,7 @@ package controllers;
 
 import db.DBHelper;
 import models.Advert;
+import models.CategoryType;
 import spark.ModelAndView;
 import spark.template.velocity.VelocityTemplateEngine;
 
@@ -49,8 +50,21 @@ public class AdvertsController {
 
 
 
+        // Create Advert
+        get("/adverts/new", (req, res) -> {
+            HashMap<String, Object> model = new HashMap<>();
+
+            List<CategoryType> categories = DBHelper.findAll(CategoryType.class);
 
 
+
+            return new ModelAndView(model, "templates/layout.vtl");
+        }, velocityTemplateEngine);
+
+
+
+        // create new advert
+        //
 
 
 
