@@ -2,11 +2,11 @@ package models;
 
 public enum CategoryType {
 
-    TECHNOLOGY("technology"),
-    FASHION("fashion"),
-    GARDEN("garden"),
-    TRANSPORT("transport"),
-    SOLD("sold");
+    TECHNOLOGY("Technology"),
+    FASHION("Fashion"),
+    GARDEN("Garden"),
+    TRANSPORT("Transport"),
+    SOLD("Sold");
 
     private String category;
 

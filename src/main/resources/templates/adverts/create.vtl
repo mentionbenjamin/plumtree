@@ -1,1 +1,27 @@
-<h1>Testing testing</h1>
+<h1>New Advert</h1>
+
+
+<form action="/adverts" method="post">
+
+    <label for="title">Title</label>
+    <input class="inputbox" id="title" type="text" name="title" required>
+
+    <label for="description">Description</label>
+    <input class="inputbox" id="description" type="text" name="description" required>
+
+    <label for="price">Price</label>
+    <input class="inputbox" id="price" type="number" name="price" required>
+
+    <label for="image">Image</label>
+    <input class="inputbox" id="image" type="text" name="image" required>
+
+    <label for="category">Category</label>
+    <select name="category" id="category">
+        #foreach($category in $categories)
+            <option value="$category.getCategory()">$category.getCategory()</option>
+        #end
+    </select>
+
+    <input type="submit" value="Post" class="button">
+
+</form>
