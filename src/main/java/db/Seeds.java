@@ -19,7 +19,7 @@ public class Seeds {
         DBHelper.save(shop);
 
         // adverts
-        Advert advert1 = new Advert("Bike", "Very fast bike", 100.00, "/image/bike");
+        Advert advert1 = new Advert("Bike", "Very fast bike", 100.00, "/images/bike1.jpg");
         advert1.setShop(shop);
         DBHelper.save(advert1);
         Advert advert2 = new Advert("Dress", "Very nice dress", 50.00, "/image/dress");
@@ -37,7 +37,7 @@ public class Seeds {
         DBHelper.update(advert1);
 
         // delete
-        DBHelper.delete(advert1);
+//        DBHelper.delete(advert1);
 
         // findAll
         List<Advert> foundAdverts = DBHelper.findAll(Advert.class);

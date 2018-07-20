@@ -4,6 +4,9 @@ import javax.persistence.*;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.time.Instant;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.temporal.TemporalUnit;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -28,8 +31,10 @@ public class Advert {
         this.description = description;
         this.price = price;
         this.imagePath = imagePath;
-        this.categories = new ArrayList<CategoryType>();
+        this.categories = new ArrayList<>();
+        //TODO: format the output of this to not show ms etc
         this.timestamp = Timestamp.from(Instant.now());
+//        this.timestamp = Timestamp.valueOf();
         //.format(new Date());
     }
 
