@@ -1,0 +1,22 @@
+<h1>Plumtree</h1>
+
+<div>
+    <table>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Image</th>
+            <th>Time Posted</th>
+        </tr>
+        #foreach($advert in $adverts)
+            <tr>
+                <td>$advert.getTitle()</td>
+                <td>$advert.getDescription()</td>
+                <td>$advert.getPrice()</td>
+                <td>$advert.getImagePath()</td>
+                <td>$advert.getTimestamp()</td>
+            </tr>
+        #end
+    </table>
+</div>

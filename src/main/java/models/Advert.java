@@ -82,7 +82,7 @@ public class Advert {
 
 
     @Column(name = "categories")
-    @Enumerated(value = EnumType.STRING)
+    @Enumerated(value = EnumType.STRING) //apparently very inefficient with a larger db, should just store as ordinals/numbers
     @ElementCollection(targetClass = CategoryType.class)
     public List<CategoryType> getCategories() {
         return categories;
