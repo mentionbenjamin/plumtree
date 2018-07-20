@@ -98,6 +98,34 @@ public class AdvertsController {
 
 
 
+        // Edit Advert Post
+        post("/adverts/:id", (req, res) -> {
+
+            String title = req.queryParams("title");
+            String description = req.queryParams("description");
+            double price = Double.parseDouble(req.queryParams("price"));
+            String imagePath = req.queryParams("image-path");
+
+            int advertId = Integer.parseInt(req.params(":id"));
+            Advert advert = DBHelper.findById(Advert.class, advertId);
+
+            advert.setTitle(title);
+            advert.setDescription(description);
+            advert.setPrice(price);
+            advert.setImagePath(imagePath);
+
+            String categoryValue = req.queryParams("category");
+            advert.getCategories().clear();
+            advert.addCategory(CategoryType.valueOf(categoryValue.toUpperCase()));
+
+            DBHelper.update(advert);
+
+            res.redirect("/adverts");
+            return null;
+        }, velocityTemplateEngine);
+
+
+
 
         // View Advert
         get("/adverts/:id", (req, res) -> {
@@ -112,6 +140,18 @@ public class AdvertsController {
             return new ModelAndView(model, "templates/layout.vtl");
         }, velocityTemplateEngine);
 
+
+
+
+        // Delete
+        post("/adverts/:id/delete", (req, res) -> {
+            int advertId = Integer.parseInt(req.params(":id"));
+            Advert advert = DBHelper.findById(Advert.class, advertId);
+            DBHelper.delete(advert);
+
+            res.redirect("/adverts");
+            return null;
+        }, velocityTemplateEngine);
 
 
     }

@@ -1,1 +1,28 @@
-<h1>Testing testing</h1>
+<h1>Create Advert</h1>
+
+
+<form action="/adverts" method="post">
+
+    <label for="title">Title</label>
+    <input class="inputbox" id="title" type="text" name="title" value="$advert.getTitle()" required>
+
+    <label for="description">Description</label>
+    <input class="inputbox" id="description" type="text" name="description" value="$advert.getDescription()" required>
+
+    <label for="price">Price</label>
+    <input class="inputbox" id="price" type="number" name="price" value="$advert.getPrice()" required>
+
+    <label for="image-path">Image</label>
+    <input class="inputbox" id="image-path" type="text" name="image-path" value="$advert.getImagePath()" required>
+
+    <label for="category">Category</label>
+    <select name="category" id="category">
+        #foreach($category in $categories)
+        <!--TODO: find a way to set the category to the existing one-->
+        <option value="$category.getCategory()">$category.getCategory()</option>
+        #end
+    </select>
+
+    <input type="submit" value="Post" class="button">
+
+</form>
