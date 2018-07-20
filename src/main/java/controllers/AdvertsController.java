@@ -81,6 +81,22 @@ public class AdvertsController {
 
 
 
+        // Edit Advert
+        get("/adverts/:id/edit", (req, res) -> {
+            HashMap<String, Object> model = new HashMap<>();
+
+            int advertId = Integer.parseInt(req.params(":id"));
+            Advert advert = DBHelper.findById(Advert.class, advertId);
+            model.put("advert", advert);
+
+            List<CategoryType> categories = Arrays.asList(CategoryType.values()); // populate dropdown categories
+            model.put("categories", categories);
+            model.put("template", "templates/adverts/edit.vtl");
+
+            return new ModelAndView(model, "templates/layout.vtl");
+        }, velocityTemplateEngine);
+
+
 
 
         // View Advert
