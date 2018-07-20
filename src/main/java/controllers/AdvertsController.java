@@ -1,8 +1,11 @@
 package controllers;
 
+import db.DBAdvert;
 import db.DBHelper;
+import db.DBShop;
 import models.Advert;
 import models.CategoryType;
+import models.Shop;
 import spark.ModelAndView;
 import spark.template.velocity.VelocityTemplateEngine;
 
@@ -12,6 +15,7 @@ import java.util.List;
 import java.util.Map;
 
 import static spark.Spark.get;
+import static spark.Spark.post;
 
 public class AdvertsController {
 
@@ -40,12 +44,42 @@ public class AdvertsController {
         get("/adverts/new", (req, res) -> {
             HashMap<String, Object> model = new HashMap<>();
 
-            List<CategoryType> categories = Arrays.asList(CategoryType.values());
+            List<CategoryType> categories = Arrays.asList(CategoryType.values()); // populate dropdown categories
             model.put("categories", categories);
             model.put("template", "templates/adverts/create.vtl");
 
             return new ModelAndView(model, "templates/layout.vtl");
         }, velocityTemplateEngine);
+
+
+
+
+        // create new advert
+        post("/adverts", (req, res) -> {
+            String title = req.queryParams("title");
+            String description = req.queryParams("description");
+            double price = Double.parseDouble(req.queryParams("price"));
+            String imagePath = req.queryParams("image-path");
+            Advert advert = new Advert(title, description, price, imagePath);
+            // getting back the inputted data and assigning to the respective variable names.
+            // then with the variable names assisn to a new advert
+
+            // TODO: find a way to get shop from db & add it to advert
+            Shop shop = DBShop.findByShopName("Plumtree");
+            advert.setShop(shop);
+
+            String categoryValue = req.queryParams("category");
+            advert.addCategory(CategoryType.valueOf(categoryValue.toUpperCase()));
+            // now get the category inputted and add the value of that category to the advert
+
+            DBHelper.save(advert);
+            // finally save the advert
+
+            res.redirect("/adverts");
+            return null;
+        }, velocityTemplateEngine);
+
+
 
 
 
@@ -61,11 +95,6 @@ public class AdvertsController {
 
             return new ModelAndView(model, "templates/layout.vtl");
         }, velocityTemplateEngine);
-
-        // create new advert
-        //
-
-
 
 
 
