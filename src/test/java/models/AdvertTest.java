@@ -116,6 +116,7 @@ public class AdvertTest {
 
     @Test
     public void hasTimestamp() {
+        //had to regenerate the advert here to save time
         advert = new Advert("Bike", "Very fast bike", 100.00, "/image/bike");
         assertEquals(Timestamp.from(Instant.now()), advert.getTimestamp());
     }
@@ -129,6 +130,12 @@ public class AdvertTest {
 
         //this test will be wrong tomorrow!
         assertEquals("21.07.2018", formattedTime);
+    }
+
+    @Test
+    public void timestampCanBeFormattedWithinModel() {
+        advert = new Advert("Bike", "Very fast bike", 100.00, "/image/bike");
+        assertEquals("21.07.2018", advert.formatTimestamp());
     }
 
 }

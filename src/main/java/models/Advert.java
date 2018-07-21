@@ -123,6 +123,12 @@ public class Advert {
     public void setTimestamp(Timestamp timeStamp) {
         this.timestamp = timeStamp;
     }
+
+
+    public String formatTimestamp() {
+        String formattedTime = new SimpleDateFormat("dd.MM.yyy").format(this.timestamp);
+        return formattedTime;
+    }
 }
 
 
