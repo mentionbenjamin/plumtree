@@ -19,12 +19,8 @@
 
     <label for="category">Categories</label>
     #foreach($category in $categories)
-    #if($advert.hasCategory($category))
-    <input checked type="checkbox" id="category" name="category" value="$category.getCategory()">
+    <input type="checkbox" id="category" name="category" value="$category.getCategory()">
     $category.getCategory()
-    #else
-    <input type="checkbox" id="category" name="category" value="$category.getCategory()"> $category.getCategory()
-    #end
     #end
 
     <input type="submit" value="Post" class="button">
