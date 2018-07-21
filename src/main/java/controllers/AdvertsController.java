@@ -114,9 +114,9 @@ public class AdvertsController {
             advert.setPrice(price);
             advert.setImagePath(imagePath);
 
-            String categoryValue = req.queryParams("category");
-            advert.getCategories().clear();
-            advert.addCategory(CategoryType.valueOf(categoryValue.toUpperCase()));
+//            String categoryValue = req.queryParams("category");
+//            advert.getCategories().clear();
+//            advert.addCategory(CategoryType.valueOf(categoryValue.toUpperCase()));
 
             DBHelper.update(advert);
 

@@ -1,7 +1,7 @@
-<h1>Create Advert</h1>
+<h1>Edit Advert</h1>
 
 
-<form action="/adverts" method="post">
+<form action="/adverts/$advert.getId()" method="post">
 
     <label for="title">Title</label>
     <input class="inputbox" id="title" type="text" name="title" value="$advert.getTitle()" required>
@@ -17,11 +17,11 @@
 
     <!--TODO: find a way to set the category to the existing one-->
 
-    <label for="category">Categories</label>
-    #foreach($category in $categories)
-    <input type="checkbox" id="category" name="category" value="$category.getCategory()">
-    $category.getCategory()
-    #end
+    <!--<label for="category">Categories</label>-->
+    <!--#foreach($category in $categories)-->
+    <!--<input type="checkbox" id="category" name="category" value="$category.getCategory()">-->
+    <!--$category.getCategory()-->
+    <!--#end-->
 
     <input type="submit" value="Post" class="button">
 
