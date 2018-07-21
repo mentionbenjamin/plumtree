@@ -40,6 +40,61 @@ public class CategoriesController {
 
 
 
+        // Filter by category Garden
+        get("/garden", (req, res) -> {
+            Map<String, Object> model = new HashMap<>();
+            List<Advert> adverts = DBAdvert.findByCategory(CategoryType.GARDEN);
+
+            model.put("adverts", adverts);
+            model.put("template", "templates/adverts/categories/garden.vtl");
+
+            return new ModelAndView(model, "templates/layout.vtl");
+
+        }, velocityTemplateEngine);
+
+
+
+        // Filter by category Technology
+        get("/technology", (req, res) -> {
+            Map<String, Object> model = new HashMap<>();
+            List<Advert> adverts = DBAdvert.findByCategory(CategoryType.TECHNOLOGY);
+
+            model.put("adverts", adverts);
+            model.put("template", "templates/adverts/categories/technology.vtl");
+
+            return new ModelAndView(model, "templates/layout.vtl");
+
+        }, velocityTemplateEngine);
+
+
+
+        // Filter by category Transport
+        get("/transport", (req, res) -> {
+            Map<String, Object> model = new HashMap<>();
+            List<Advert> adverts = DBAdvert.findByCategory(CategoryType.TRANSPORT);
+
+            model.put("adverts", adverts);
+            model.put("template", "templates/adverts/categories/transport.vtl");
+
+            return new ModelAndView(model, "templates/layout.vtl");
+
+        }, velocityTemplateEngine);
+
+
+
+        // Filter by category Sold
+        get("/sold", (req, res) -> {
+            Map<String, Object> model = new HashMap<>();
+            List<Advert> adverts = DBAdvert.findByCategory(CategoryType.SOLD);
+
+            model.put("adverts", adverts);
+            model.put("template", "templates/adverts/categories/sold.vtl");
+
+            return new ModelAndView(model, "templates/layout.vtl");
+
+        }, velocityTemplateEngine);
+
+
 
 
     }
