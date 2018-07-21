@@ -1,9 +1,11 @@
 package models;
 
+import com.sun.tools.corba.se.idl.constExpr.Times;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 import java.time.Instant;
 import java.util.ArrayList;
 
@@ -118,5 +120,15 @@ public class AdvertTest {
         assertEquals(Timestamp.from(Instant.now()), advert.getTimestamp());
     }
 
+    @Test
+    public void timestampCanBeFormatted() {
+        advert = new Advert("Bike", "Very fast bike", 100.00, "/image/bike");
+        Timestamp timeNow = advert.getTimestamp();
+
+        String formattedTime = new SimpleDateFormat("dd.MM.yyyy").format(timeNow);
+
+        //this test will be wrong tomorrow!
+        assertEquals("21.07.2018", formattedTime);
+    }
 
 }
