@@ -134,6 +134,14 @@ public class Advert {
     public void setFormattedTimestamp(String formattedTimestamp) {
         this.formattedTimestamp = formattedTimestamp;
     }
+
+
+    public boolean hasCategory(CategoryType category) {
+        return this.categories.contains(category);
+    }
+
 }
+
+
 
 

@@ -54,7 +54,7 @@ public class AdvertsController {
 
 
 
-        // create new advert
+        // Create new advert
         post("/adverts", (req, res) -> {
             String title = req.queryParams("title");
             String description = req.queryParams("description");

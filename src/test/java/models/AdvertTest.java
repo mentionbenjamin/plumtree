@@ -151,4 +151,11 @@ public class AdvertTest {
         assertEquals(false, advert.getCategories().contains(CategoryType.GARDEN));
     }
 
+    @Test
+    public void canCheckWhatCategoriesContains() {
+        advert.addCategory(CategoryType.FASHION);
+        assertEquals(true, advert.hasCategory(CategoryType.FASHION));
+        assertEquals(false, advert.hasCategory(CategoryType.TECHNOLOGY));
+    }
+
 }

@@ -15,12 +15,17 @@
     <label for="image-path">Image</label>
     <input class="inputbox" id="image-path" type="text" name="image-path" value="$advert.getImagePath()" required>
 
-        <!--TODO: find a way to set the category to the existing one-->
+    <!--TODO: find a way to set the category to the existing one-->
 
     <label for="category">Categories</label>
-        #foreach($category in $categories)
-            <input type="checkbox" id="category" name="category" value="$category.getCategory()"> $category.getCategory()
-        #end
+    #foreach($category in $categories)
+    #if($advert.getCategories().contains($category))
+    <input checked type="checkbox" id="category" name="category" value="$category.getCategory()">
+    $category.getCategory()
+    #else
+    <!--<input type="checkbox" id="category" name="category" value="$category.getCategory()"> $category.getCategory()-->
+    #end
+    #end
 
     <input type="submit" value="Post" class="button">
 
