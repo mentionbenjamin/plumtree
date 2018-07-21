@@ -15,13 +15,15 @@
     <label for="image-path">Image</label>
     <input class="inputbox" id="image-path" type="text" name="image-path" value="$advert.getImagePath()" required>
 
-    <label for="category">Category</label>
-    <select name="category" id="category">
-        #foreach($category in $categories)
         <!--TODO: find a way to set the category to the existing one-->
-        <option value="$category.getCategory()">$category.getCategory()</option>
+        <!--TODO: will have to have multiple options since categories is an arraylist-->
+    
+    <label for="category">Categories</label>
+        #foreach($category in $categories)
+        <input type="checkbox" id="category" name="category" value="$category.getCategory()"> $category.getCategory()
+
+        <!--<option value="$category.getCategory()">$category.getCategory()</option>-->
         #end
-    </select>
 
     <input type="submit" value="Post" class="button">
 
