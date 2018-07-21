@@ -68,6 +68,10 @@ public class Seeds {
 //        List<CategoryType> categories = Arrays.asList(CategoryType.values());
 
 
+        List<CategoryType> categories = advert1.getCategories();
+        boolean testBoolean = advert1.hasCategory(CategoryType.TRANSPORT);
+
+        Advert foundAdvert = DBHelper.findById(Advert.class, advert2.getId());
     }
 
 

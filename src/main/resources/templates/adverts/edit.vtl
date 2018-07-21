@@ -19,11 +19,11 @@
 
     <label for="category">Categories</label>
     #foreach($category in $categories)
-    #if($advert.getCategories().contains($category))
+    #if($advert.hasCategory($category))
     <input checked type="checkbox" id="category" name="category" value="$category.getCategory()">
     $category.getCategory()
     #else
-    <!--<input type="checkbox" id="category" name="category" value="$category.getCategory()"> $category.getCategory()-->
+    <input type="checkbox" id="category" name="category" value="$category.getCategory()"> $category.getCategory()
     #end
     #end
 
