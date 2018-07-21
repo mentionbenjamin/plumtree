@@ -18,6 +18,7 @@ public class MainController {
 
         staticFileLocation("/public"); //must be above any extra controllers and seed data
         AdvertsController advertsController = new AdvertsController();
+        CategoriesController categoriesController = new CategoriesController();
         Seeds.seedData();
 
 

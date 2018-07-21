@@ -1,0 +1,32 @@
+<h1>Fashion</h1>
+
+<a href="/adverts/new">Create new advert</a>
+<br>
+<a href="">All</a>
+<a href="">Technology</a>
+<a href="">Fashion</a>
+<a href="">Garden</a>
+<a href="">Transport</a>
+<a href="">Sold</a>
+
+<div>
+    <table>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Image</th>
+            <th>Time Posted</th>
+        </tr>
+        #foreach($advert in $adverts)
+        <tr>
+            <td>$advert.getTitle()</td>
+            <td>$advert.getDescription()</td>
+            <td>$advert.getPrice()</td>
+            <td><img src="$advert.getImagePath()"/></td>
+            <td>$advert.getTimestamp()</td>
+            <td><a href="/adverts/$advert.getId()">view advert</a></td>
+        </tr>
+        #end
+    </table>
+</div>

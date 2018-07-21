@@ -25,6 +25,7 @@ public class Seeds {
         DBHelper.save(advert1);
         Advert advert2 = new Advert("Dress", "Very nice dress", 50.00, "/images/dress1.jpg");
         advert2.setShop(shop);
+        advert2.addCategory(CategoryType.FASHION);
         DBHelper.save(advert2);
         Advert advert3 = new Advert("Phone", "Very good phone", 200.00, "/images/phone1.jpg");
         advert3.setShop(shop);
