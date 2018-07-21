@@ -8,6 +8,7 @@ import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.time.Instant;
 import java.util.ArrayList;
+import java.util.List;
 
 import static junit.framework.TestCase.assertEquals;
 
@@ -136,6 +137,18 @@ public class AdvertTest {
     public void timestampCanBeFormattedWithinModel() {
         advert = new Advert("Bike", "Very fast bike", 100.00, "/image/bike");
         assertEquals("21 Jul, 2018", advert.getFormattedTimestamp());
+    }
+
+    @Test
+    public void hasASpecificCategoryWithinCategoriesList() {
+        List<CategoryType> categories = advert.getCategories();
+        categories.add(CategoryType.GARDEN);
+        assertEquals(true, categories.contains(CategoryType.GARDEN));
+    }
+
+    @Test
+    public void doesNotHaveASpecificCategoryWithinCategoriesList() {
+        assertEquals(false, advert.getCategories().contains(CategoryType.GARDEN));
     }
 
 }
