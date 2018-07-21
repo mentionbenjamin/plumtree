@@ -24,6 +24,8 @@ public class Advert {
     private Shop shop;
     private Timestamp timestamp;
 
+    private String formattedTimestamp;
+
     public Advert() {}
 
     public Advert(String title, String description, double price, String imagePath) {
@@ -34,8 +36,7 @@ public class Advert {
         this.categories = new ArrayList<>();
         //TODO: format the output of this to not show ms etc
         this.timestamp = Timestamp.from(Instant.now());
-//        this.timestamp = Timestamp.valueOf();
-        //.format(new Date());
+        this.formattedTimestamp = new SimpleDateFormat("dd.MM.yyyy").format(this.timestamp);
     }
 
 
@@ -125,9 +126,12 @@ public class Advert {
     }
 
 
-    public String formatTimestamp() {
-        String formattedTime = new SimpleDateFormat("dd.MM.yyy").format(this.timestamp);
-        return formattedTime;
+    @Column(name = "formatted_posted_time")
+    public String getFormattedTimestamp() {
+        return this.formattedTimestamp;
+    }
+    public void setFormattedTimestamp(String formattedTimestamp) {
+        this.formattedTimestamp = formattedTimestamp;
     }
 }
 

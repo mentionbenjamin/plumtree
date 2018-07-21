@@ -135,7 +135,7 @@ public class AdvertTest {
     @Test
     public void timestampCanBeFormattedWithinModel() {
         advert = new Advert("Bike", "Very fast bike", 100.00, "/image/bike");
-        assertEquals("21.07.2018", advert.formatTimestamp());
+        assertEquals("21.07.2018", advert.getFormattedTimestamp());
     }
 
 }
