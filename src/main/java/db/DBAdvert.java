@@ -94,24 +94,6 @@ public class DBAdvert {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     // FIND BY CATEGORY
     public static List<Advert> findByCategory(CategoryType category) {
         session = HibernateUtil.getSessionFactory().openSession();
@@ -133,8 +115,4 @@ public class DBAdvert {
         }
         return results; // finally, return the results of the above...
     }
-
-
-
-
 }

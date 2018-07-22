@@ -21,11 +21,13 @@ public class AdvertsController {
 
     public AdvertsController() {
         this.setUpEndPoints();
-        }
+    }
 
     private void setUpEndPoints() {
 
         VelocityTemplateEngine velocityTemplateEngine = new VelocityTemplateEngine();
+
+
 
         // Adverts
         get("/adverts", (req, res) -> {
@@ -92,8 +94,6 @@ public class AdvertsController {
 
 
 
-
-
         // Create Advert
         get("/adverts/new", (req, res) -> {
             HashMap<String, Object> model = new HashMap<>();
@@ -104,7 +104,6 @@ public class AdvertsController {
 
             return new ModelAndView(model, "templates/layout.vtl");
         }, velocityTemplateEngine);
-
 
 
 
@@ -180,7 +179,6 @@ public class AdvertsController {
 
 
 
-
         // View Advert
         get("/adverts/:id", (req, res) -> {
             HashMap<String, Object> model = new HashMap<>();
@@ -196,7 +194,6 @@ public class AdvertsController {
 
 
 
-
         // Delete
         post("/adverts/:id/delete", (req, res) -> {
             int advertId = Integer.parseInt(req.params(":id"));
@@ -206,8 +203,6 @@ public class AdvertsController {
             res.redirect("/adverts");
             return null;
         }, velocityTemplateEngine);
-
-
 
 
     }
