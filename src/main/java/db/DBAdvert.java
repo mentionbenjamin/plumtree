@@ -65,6 +65,53 @@ public class DBAdvert {
     }
 
 
+
+    // ORDER BY PRICE EITHER
+    public static List<Advert> orderByPrice(boolean descTrueAscFalse) {
+        session = HibernateUtil.getSessionFactory().openSession();
+        List<Advert> results = null;
+        try {
+            if (descTrueAscFalse) {
+                Criteria cr = session.createCriteria(Advert.class);
+                cr.addOrder(Order.desc("price"));
+                results = cr.list();
+            }
+            else {
+                Criteria cr = session.createCriteria(Advert.class);
+                cr.addOrder(Order.asc("price"));
+                results = cr.list();
+            }
+        }
+        catch (HibernateException e) {
+            e.printStackTrace();
+        }
+        finally {
+            session.close();
+        }
+
+        return results;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     // FIND BY CATEGORY
     public static List<Advert> findByCategory(CategoryType category) {
         session = HibernateUtil.getSessionFactory().openSession();

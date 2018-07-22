@@ -73,8 +73,11 @@ public class Seeds {
 
 //        List<CategoryType> categories = advert1.getCategories();
 //        boolean testBoolean = advert1.hasCategory(CategoryType.TRANSPORT);
-//
+
 //        Advert foundAdvert = DBHelper.findById(Advert.class, advert2.getId());
+
+        List<Advert> orderedAdvertsByPriceExpensiveFirst = DBAdvert.orderByPrice(true);
+        List<Advert> orderedAdvertsByPriceCheapFirst = DBAdvert.orderByPrice(false);
     }
 
 
