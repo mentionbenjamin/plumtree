@@ -8,10 +8,12 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.criterion.Order;
+import org.hibernate.criterion.Restrictions;
 import sun.tools.java.ClassType;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ResourceBundle;
 
 public class DBAdvert {
 
@@ -94,24 +96,6 @@ public class DBAdvert {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     // FIND BY CATEGORY
     public static List<Advert> findByCategory(CategoryType category) {
         session = HibernateUtil.getSessionFactory().openSession();
@@ -134,6 +118,25 @@ public class DBAdvert {
         return results; // finally, return the results of the above...
     }
 
+
+
+    // FIND BY TITLE
+    public static Advert findByTitle(String title) {
+        session = HibernateUtil.getSessionFactory().openSession();
+        Advert result = null;
+        try {
+            Criteria cr = session.createCriteria(Advert.class);
+            cr.add(Restrictions.eq("title", title));
+            result = (Advert) cr.uniqueResult();
+        }
+        catch (HibernateException e) {
+            e.printStackTrace();
+        }
+        finally {
+            session.close();
+        }
+        return result;
+    }
 
 
 
