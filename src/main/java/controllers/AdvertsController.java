@@ -103,6 +103,23 @@ public class AdvertsController {
 
 
 
+        post("/adverts/search", (req, res) -> {
+            Map<String, Object> model = new HashMap<>();
+
+            Advert foundAdvert = DBAdvert.findByTitle(req.queryParams("search-results"));
+            if (foundAdvert == null) {
+                model.put("template", "templates/adverts/searches/no_result.vtl");
+            }
+            else {
+                model.put("template", "templates/adverts/searches/result.vtl");
+                model.put("foundAdvert", foundAdvert);
+            }
+
+            return new ModelAndView(model, "templates/layout.vtl");
+        }, velocityTemplateEngine);
+
+
+
 
         // Create Advert
         get("/adverts/new", (req, res) -> {
