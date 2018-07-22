@@ -181,7 +181,6 @@ public class AdvertsController {
 
 
 
-
         // Edit Advert
         get("/adverts/:id/edit", (req, res) -> {
             HashMap<String, Object> model = new HashMap<>();
@@ -196,7 +195,6 @@ public class AdvertsController {
 
             return new ModelAndView(model, "templates/layout.vtl");
         }, velocityTemplateEngine);
-
 
 
 
