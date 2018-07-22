@@ -121,6 +121,8 @@ public class AdvertsController {
             return new ModelAndView(model, "templates/layout.vtl");
         }, velocityTemplateEngine);
 
+
+
         post("/adverts/search/price", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
 
