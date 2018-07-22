@@ -79,8 +79,8 @@ public class Seeds {
 //        List<Advert> orderedAdvertsByPriceExpensiveFirst = DBAdvert.orderByPrice(true);
 //        List<Advert> orderedAdvertsByPriceCheapFirst = DBAdvert.orderByPrice(false);
 
-        List<Advert> orderedAdvertsByTimeNewestFirst = DBAdvert.orderByTime(true);
-        List<Advert> orderedAdvertsByTimeOldestFirst = DBAdvert.orderByTime(false);
+//        List<Advert> orderedAdvertsByTimeNewestFirst = DBAdvert.orderByTime(true);
+//        List<Advert> orderedAdvertsByTimeOldestFirst = DBAdvert.orderByTime(false);
     }
 
 
