@@ -81,10 +81,12 @@ public class Seeds {
 
 //        List<Advert> advertsFoundByTitle = DBAdvert.findByTitle("Bike");
 //        List<Advert> advertsFoundByTitleWhichDoesntExist = DBAdvert.findByTitle("Error");
-//
+
 //        List<Advert> foundAdvertsByPrice = DBAdvert.findByPrice(100.00);
 //        List<Advert> foundAdvertsByPriceNoneExists = DBAdvert.findByPrice(2.00);
 
+//        List<Advert> orderedAdvertsByTimeNewestFirst = DBAdvert.orderByTime(true);
+//        List<Advert> orderedAdvertsByTimeOldestFirst = DBAdvert.orderByTime(false);
     }
 
 

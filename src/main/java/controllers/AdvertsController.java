@@ -21,11 +21,13 @@ public class AdvertsController {
 
     public AdvertsController() {
         this.setUpEndPoints();
-        }
+    }
 
     private void setUpEndPoints() {
 
         VelocityTemplateEngine velocityTemplateEngine = new VelocityTemplateEngine();
+
+
 
         // Adverts
         get("/adverts", (req, res) -> {
@@ -44,7 +46,7 @@ public class AdvertsController {
         get("/adverts/sorted-by-time-desc", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
 
-            List<Advert> sortedAdvertsByTimeDesc = DBAdvert.orderByPostedTimeDescending();
+            List<Advert> sortedAdvertsByTimeDesc = DBAdvert.orderByTime(true);
             model.put("template", "templates/adverts/displays/time_desc.vtl");
             model.put("sortedAdvertsByTime", sortedAdvertsByTimeDesc);
 
@@ -57,7 +59,7 @@ public class AdvertsController {
         get("/adverts/sorted-by-time-asc", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
 
-            List<Advert> sortedAdvertsByTimeAsc = DBAdvert.orderByPostedTimeAscending();
+            List<Advert> sortedAdvertsByTimeAsc = DBAdvert.orderByTime(false);
             model.put("template", "templates/adverts/displays/time_asc.vtl");
             model.put("sortedAdvertsByTime", sortedAdvertsByTimeAsc);
 
@@ -137,7 +139,6 @@ public class AdvertsController {
 
 
 
-
         // Create Advert
         get("/adverts/new", (req, res) -> {
             HashMap<String, Object> model = new HashMap<>();
@@ -148,7 +149,6 @@ public class AdvertsController {
 
             return new ModelAndView(model, "templates/layout.vtl");
         }, velocityTemplateEngine);
-
 
 
 
@@ -226,7 +226,6 @@ public class AdvertsController {
 
 
 
-
         // View Advert
         get("/adverts/:id", (req, res) -> {
             HashMap<String, Object> model = new HashMap<>();
@@ -242,7 +241,6 @@ public class AdvertsController {
 
 
 
-
         // Delete
         post("/adverts/:id/delete", (req, res) -> {
             int advertId = Integer.parseInt(req.params(":id"));
@@ -252,8 +250,6 @@ public class AdvertsController {
             res.redirect("/adverts");
             return null;
         }, velocityTemplateEngine);
-
-
 
 
     }

@@ -32,16 +32,5 @@ public class MainController {
             return new ModelAndView(model,"templates/layout.vtl");
         }, velocityTemplateEngine);
 
-
-
-
-
-
-
-
-
-
-
-
     }
 }

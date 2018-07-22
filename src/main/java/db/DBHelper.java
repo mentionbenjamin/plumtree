@@ -14,6 +14,7 @@ public class DBHelper {
     private static Transaction transaction;
 
 
+
     // SAVE
     public static void save(Object object) {
         session = HibernateUtil.getSessionFactory().openSession();
@@ -28,6 +29,7 @@ public class DBHelper {
             session.close();
         }
     }
+
 
 
     //UPDATE
@@ -49,6 +51,7 @@ public class DBHelper {
     }
 
 
+
     //DELETE
     public static void delete(Object object) {
         session = HibernateUtil.getSessionFactory().openSession();
@@ -66,6 +69,7 @@ public class DBHelper {
             session.close();
         }
     }
+
 
 
     //DELETE ALL
@@ -91,6 +95,7 @@ public class DBHelper {
     }
 
 
+
     // FIND ALL
     public static <Type> List<Type> findAll(Class classType) {
         session = HibernateUtil.getSessionFactory().openSession();
@@ -105,6 +110,7 @@ public class DBHelper {
         }
         return results;
     }
+
 
 
     // FIND BY ID
