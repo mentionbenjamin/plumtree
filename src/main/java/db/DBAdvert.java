@@ -25,7 +25,8 @@ public class DBAdvert {
 //    }
 
 
-    // ORDER BY POSTED TIME
+
+    // ORDER BY POSTED TIME DESCENDING
     public static List<Advert> orderByPostedTimeDescending() {
         session = HibernateUtil.getSessionFactory().openSession();
         List<Advert> results = null;
@@ -40,7 +41,26 @@ public class DBAdvert {
         finally {
             session.close();
         }
+        return results;
+    }
 
+
+
+    // ORDER BY POSTED TIME ASCENDING
+    public static List<Advert> orderByPostedTimeAscending() {
+        session = HibernateUtil.getSessionFactory().openSession();
+        List<Advert> results = null;
+        try {
+            Criteria cr = session.createCriteria(Advert.class);
+            cr.addOrder(Order.asc("timestamp"));
+            results = cr.list();
+        }
+        catch (HibernateException e) {
+            e.printStackTrace();
+        }
+        finally {
+            session.close();
+        }
         return results;
     }
 

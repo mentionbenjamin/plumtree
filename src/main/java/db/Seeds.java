@@ -58,8 +58,11 @@ public class Seeds {
         // addAdvertToShop
 //        DBAdvert.addAdvertToShop(advert2, shop);
 
-        // orderByPostedTime
-//        List<Advert> orderedAdverts = DBAdvert.orderByPostedTimeDescending();
+        // orderByPostedTimeDescending
+//        List<Advert> orderedAdvertsByTimeDescending = DBAdvert.orderByPostedTimeDescending();
+
+        // orderByPostedTimeAscending
+        List<Advert> orderedAdvertsByTieAscending = DBAdvert.orderByPostedTimeAscending();
 
         // findByCategory
 //        List<Advert> foundAdvertsInCategory = DBAdvert.findByCategory(CategoryType.TECHNOLOGY);
@@ -68,10 +71,10 @@ public class Seeds {
 //        List<CategoryType> categories = Arrays.asList(CategoryType.values());
 
 
-        List<CategoryType> categories = advert1.getCategories();
-        boolean testBoolean = advert1.hasCategory(CategoryType.TRANSPORT);
-
-        Advert foundAdvert = DBHelper.findById(Advert.class, advert2.getId());
+//        List<CategoryType> categories = advert1.getCategories();
+//        boolean testBoolean = advert1.hasCategory(CategoryType.TRANSPORT);
+//
+//        Advert foundAdvert = DBHelper.findById(Advert.class, advert2.getId());
     }
 
 
