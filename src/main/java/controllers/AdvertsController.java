@@ -40,6 +40,26 @@ public class AdvertsController {
 
 
 
+        // Sort Adverts By Timestamp
+        get("/adverts/sorted-by-time", (req, res) -> {
+            Map<String, Object> model = new HashMap<>();
+
+            List<Advert> sortedAdvertsByTime = DBAdvert.orderByPostedTimeDescending();
+            model.put("template", "templates/adverts/displays/time_desc.vtl");
+            model.put("sortedAdvertsByTime", sortedAdvertsByTime);
+
+            return new ModelAndView(model, "templates/layout.vtl");
+        }, velocityTemplateEngine);
+
+
+
+
+
+
+
+
+
+
         // Create Advert
         get("/adverts/new", (req, res) -> {
             HashMap<String, Object> model = new HashMap<>();
@@ -152,6 +172,8 @@ public class AdvertsController {
             res.redirect("/adverts");
             return null;
         }, velocityTemplateEngine);
+
+
 
 
     }

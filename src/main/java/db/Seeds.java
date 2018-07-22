@@ -59,7 +59,7 @@ public class Seeds {
 //        DBAdvert.addAdvertToShop(advert2, shop);
 
         // orderByPostedTime
-//        List<Advert> orderedAdverts = DBAdvert.orderByPostedTime();
+//        List<Advert> orderedAdverts = DBAdvert.orderByPostedTimeDescending();
 
         // findByCategory
 //        List<Advert> foundAdvertsInCategory = DBAdvert.findByCategory(CategoryType.TECHNOLOGY);

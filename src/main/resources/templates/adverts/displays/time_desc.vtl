@@ -1,0 +1,32 @@
+<h1>Plumtree</h1>
+
+<a href="/adverts/new">Create new advert</a>
+<br>
+<a href="/adverts">All</a>
+<a href="/technology">Technology</a>
+<a href="/fashion">Fashion</a>
+<a href="/garden">Garden</a>
+<a href="/transport">Transport</a>
+<a href="/sold">Sold</a>
+
+<div>
+    <table>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Image</th>
+            <th>Time Posted</th>
+        </tr>
+        #foreach($advert in $sortedAdvertsByTime)
+        <tr>
+            <td>$advert.getTitle()</td>
+            <td>$advert.getDescription()</td>
+            <td>$advert.getPrice()</td>
+            <td><img src="$advert.getImagePath()"/></td>
+            <td>$advert.getFormattedTimestamp()</td>
+            <td><a href="/adverts/$advert.getId()">view advert</a></td>
+        </tr>
+        #end
+    </table>
+</div>

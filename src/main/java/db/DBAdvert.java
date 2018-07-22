@@ -26,7 +26,7 @@ public class DBAdvert {
 
 
     // ORDER BY POSTED TIME
-    public static List<Advert> orderByPostedTime() {
+    public static List<Advert> orderByPostedTimeDescending() {
         session = HibernateUtil.getSessionFactory().openSession();
         List<Advert> results = null;
         try {
