@@ -108,13 +108,13 @@ public class AdvertsController {
 
             String submittedTitle = req.queryParams("search-results");
             List<Advert> foundAdverts = DBAdvert.findByTitle(submittedTitle);
-//            if (foundAdvert == null) {
-//                model.put("template", "templates/adverts/searches/no_result.vtl");
-//            }
-//            else {
-//                model.put("template", "templates/adverts/searches/result.vtl");
-//                model.put("foundAdvert", foundAdvert);
-//            }
+            if (foundAdverts.size() == 0) {
+                model.put("template", "templates/adverts/searches/no_result.vtl");
+            }
+            else {
+                model.put("template", "templates/adverts/searches/results.vtl");
+                model.put("foundAdverts", foundAdverts);
+            }
 
             return new ModelAndView(model, "templates/layout.vtl");
         }, velocityTemplateEngine);
