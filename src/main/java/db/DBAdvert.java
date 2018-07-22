@@ -121,13 +121,13 @@ public class DBAdvert {
 
 
     // FIND BY TITLE
-    public static Advert findByTitle(String title) {
+    public static List<Advert> findByTitle(String title) {
         session = HibernateUtil.getSessionFactory().openSession();
-        Advert result = null;
+        List<Advert> results = null;
         try {
             Criteria cr = session.createCriteria(Advert.class);
             cr.add(Restrictions.eq("title", title));
-            result = (Advert) cr.uniqueResult();
+            results = cr.list();
         }
         catch (HibernateException e) {
             e.printStackTrace();
@@ -135,7 +135,7 @@ public class DBAdvert {
         finally {
             session.close();
         }
-        return result;
+        return results;
     }
 
 
