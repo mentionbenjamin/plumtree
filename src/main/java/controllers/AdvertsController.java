@@ -103,7 +103,7 @@ public class AdvertsController {
 
 
 
-        post("/adverts/search", (req, res) -> {
+        post("/adverts/search/title", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
 
             Advert foundAdvert = DBAdvert.findByTitle(req.queryParams("search-results"));
