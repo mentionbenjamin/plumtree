@@ -140,4 +140,24 @@ public class DBAdvert {
 
 
 
+    // FIND BY PRICE
+    public static List<Advert> findByPrice(double price) {
+        session = HibernateUtil.getSessionFactory().openSession();
+        List<Advert> results = null;
+        try {
+            Criteria cr = session.createCriteria(Advert.class);
+            cr.add(Restrictions.eq("price", price));
+            results = cr.list();
+        }
+        catch (HibernateException e ) {
+            e.printStackTrace();
+        }
+        finally {
+            session.close();
+        }
+        return results;
+    }
+
+
+
 }

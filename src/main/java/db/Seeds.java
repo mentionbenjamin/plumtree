@@ -81,6 +81,10 @@ public class Seeds {
 
 //        Advert advertFoundByTitle = DBAdvert.findByTitle("Bike");
 //        Advert advertFoundByTitleWhichDoesntExist = DBAdvert.findByTitle("Error");
+
+        List<Advert> foundAdvertsByPrice = DBAdvert.findByPrice(100.00);
+        List<Advert> foundAdvertsByPriceNoneExists = DBAdvert.findByPrice(2.00);
+
     }
 
 
