@@ -14,6 +14,6 @@
 
         <mapping class = "models.Advert"/>
         <mapping class = "models.Shop"/>
-
+        <!--TODO: maybe adding mapping for categoryType will solve the recurring problem-->
     </session-factory>
 </hibernate-configuration>
