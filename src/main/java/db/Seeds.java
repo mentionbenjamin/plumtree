@@ -62,7 +62,7 @@ public class Seeds {
 //        List<Advert> orderedAdvertsByTimeDescending = DBAdvert.orderByPostedTimeDescending();
 
         // orderByPostedTimeAscending
-        List<Advert> orderedAdvertsByTieAscending = DBAdvert.orderByPostedTimeAscending();
+//        List<Advert> orderedAdvertsByTieAscending = DBAdvert.orderByPostedTimeAscending();
 
         // findByCategory
 //        List<Advert> foundAdvertsInCategory = DBAdvert.findByCategory(CategoryType.TECHNOLOGY);

@@ -40,13 +40,26 @@ public class AdvertsController {
 
 
 
-        // Sort Adverts By Timestamp
+        // Sort Adverts By Timestamp Descending
         get("/adverts/sorted-by-time-desc", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
 
-            List<Advert> sortedAdvertsByTime = DBAdvert.orderByPostedTimeDescending();
+            List<Advert> sortedAdvertsByTimeDesc = DBAdvert.orderByPostedTimeDescending();
             model.put("template", "templates/adverts/displays/time_desc.vtl");
-            model.put("sortedAdvertsByTime", sortedAdvertsByTime);
+            model.put("sortedAdvertsByTime", sortedAdvertsByTimeDesc);
+
+            return new ModelAndView(model, "templates/layout.vtl");
+        }, velocityTemplateEngine);
+
+
+
+        // Sort Adverts By Timestamp Ascending
+        get("/adverts/sorted-by-time-asc", (req, res) -> {
+            Map<String, Object> model = new HashMap<>();
+
+            List<Advert> sortedAdvertsByTimeAsc = DBAdvert.orderByPostedTimeAscending();
+            model.put("template", "templates/adverts/displays/time_asc.vtl");
+            model.put("sortedAdvertsByTime", sortedAdvertsByTimeAsc);
 
             return new ModelAndView(model, "templates/layout.vtl");
         }, velocityTemplateEngine);
