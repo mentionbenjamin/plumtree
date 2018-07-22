@@ -41,7 +41,7 @@ public class AdvertsController {
 
 
         // Sort Adverts By Timestamp
-        get("/adverts/sorted-by-time", (req, res) -> {
+        get("/adverts/sorted-by-time-desc", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
 
             List<Advert> sortedAdvertsByTime = DBAdvert.orderByPostedTimeDescending();
@@ -50,12 +50,6 @@ public class AdvertsController {
 
             return new ModelAndView(model, "templates/layout.vtl");
         }, velocityTemplateEngine);
-
-
-
-
-
-
 
 
 
