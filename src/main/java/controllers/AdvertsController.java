@@ -66,7 +66,16 @@ public class AdvertsController {
 
 
 
-        // Sort Adverts By Price Either
+        // Sort Adverts By Price Descending
+        get("/adverts/sorted-by-price-desc", (req, res) -> {
+            Map<String, Object> model = new HashMap<>();
+
+            List<Advert> sortedAdvertsByPriceDescending = DBAdvert.orderByPrice(true);
+            model.put("template", "templates/adverts/displays/price_desc.vtl");
+            model.put("sortedAdvertsByPrice", sortedAdvertsByPriceDescending);
+
+            return new ModelAndView(model, "templates/layout.vtl");
+        }, velocityTemplateEngine);
 
 
 

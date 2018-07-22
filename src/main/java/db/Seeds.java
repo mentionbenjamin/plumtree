@@ -76,8 +76,8 @@ public class Seeds {
 
 //        Advert foundAdvert = DBHelper.findById(Advert.class, advert2.getId());
 
-        List<Advert> orderedAdvertsByPriceExpensiveFirst = DBAdvert.orderByPrice(true);
-        List<Advert> orderedAdvertsByPriceCheapFirst = DBAdvert.orderByPrice(false);
+//        List<Advert> orderedAdvertsByPriceExpensiveFirst = DBAdvert.orderByPrice(true);
+//        List<Advert> orderedAdvertsByPriceCheapFirst = DBAdvert.orderByPrice(false);
     }
 
 
