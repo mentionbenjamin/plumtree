@@ -92,6 +92,16 @@ public class AdvertsController {
 
 
 
+        // Search By Title
+        get("/adverts/search", (req, res) -> {
+            Map<String, Object> model = new HashMap<>();
+
+            model.put("template", "templates/adverts/searches/search.vtl");
+
+            return new ModelAndView(model, "templates/layout.vtl");
+        }, velocityTemplateEngine);
+
+
 
 
         // Create Advert
@@ -135,6 +145,7 @@ public class AdvertsController {
 
 
 
+
         // Edit Advert
         get("/adverts/:id/edit", (req, res) -> {
             HashMap<String, Object> model = new HashMap<>();
@@ -149,6 +160,7 @@ public class AdvertsController {
 
             return new ModelAndView(model, "templates/layout.vtl");
         }, velocityTemplateEngine);
+
 
 
 

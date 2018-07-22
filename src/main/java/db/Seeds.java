@@ -79,8 +79,8 @@ public class Seeds {
 //        List<Advert> orderedAdvertsByPriceExpensiveFirst = DBAdvert.orderByPrice(true);
 //        List<Advert> orderedAdvertsByPriceCheapFirst = DBAdvert.orderByPrice(false);
 
-        Advert advertFoundByTitle = DBAdvert.findByTitle("Bike");
-        Advert advertFoundByTitleWhichDoesntExist = DBAdvert.findByTitle("Error");
+//        Advert advertFoundByTitle = DBAdvert.findByTitle("Bike");
+//        Advert advertFoundByTitleWhichDoesntExist = DBAdvert.findByTitle("Error");
     }
 
 
