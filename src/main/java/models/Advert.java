@@ -23,7 +23,6 @@ public class Advert {
     private List<CategoryType> categories;
     private Shop shop;
     private Timestamp timestamp;
-
     private String formattedTimestamp;
 
     public Advert() {}
