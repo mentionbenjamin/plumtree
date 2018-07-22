@@ -140,6 +140,9 @@ public class Advert {
         return this.categories.contains(category);
     }
 
+    public void sell() {
+        this.categories.add(CategoryType.SOLD);
+    }
 }
 
 
