@@ -118,6 +118,22 @@ public class AdvertsController {
             return new ModelAndView(model, "templates/layout.vtl");
         }, velocityTemplateEngine);
 
+        post("/adverts/search/price", (req, res) -> {
+            Map<String, Object> model = new HashMap<>();
+
+            double submittedPrice = Double.parseDouble(req.queryParams("search-results"));
+            List<Advert> foundAdverts = DBAdvert.findByPrice(submittedPrice);
+            if (foundAdverts.size() == 0) {
+                model.put("template", "templates/adverts/searches/no_result");
+            }
+            else {
+                model.put("template", "templates/adverts/searches/results.vtl");
+                model.put("foundAdverts", foundAdverts);
+            }
+
+            return new ModelAndView(model, "templates/layout.vtl");
+        }, velocityTemplateEngine);
+
 
 
 
