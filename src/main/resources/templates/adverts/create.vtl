@@ -15,13 +15,6 @@
     <label for="image-path">Image</label>
     <input class="inputbox" id="image-path" type="text" name="image-path" required>
 
-    <!--<label for="category">Category</label>-->
-    <!--<select name="category" id="category">-->
-    <!--#foreach($category in $categories)-->
-    <!--<option value="$category.getCategory()">$category.getCategory()</option>-->
-    <!--#end-->
-    <!--</select>-->
-
     #foreach($category in $categories)
     <label for="$category.getCategory()">
     <input type="checkbox" id="$category.getCategory()" name="$category.getCategory()" value="$category.getCategory()">

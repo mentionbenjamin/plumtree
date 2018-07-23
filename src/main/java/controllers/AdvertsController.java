@@ -220,9 +220,19 @@ public class AdvertsController {
             advert.setPrice(price);
             advert.setImagePath(imagePath);
 
-//            String categoryValue = req.queryParams("category");
-//            advert.getCategories().clear();
-//            advert.addCategory(CategoryType.valueOf(categoryValue.toUpperCase()));
+            List<CategoryType> categories = Arrays.asList(CategoryType.values());
+            List<String> categoryValues = new ArrayList<>();
+
+            for (CategoryType category : categories) {
+                String categoryName = category.getCategory();
+                String categoryValue = req.queryParams(categoryName);
+                if (categoryValue != null) {
+                    categoryValues.add(categoryValue);
+                }
+            }
+
+            advert.getCategories().clear();
+            advert.addCategoriesThatWereStrings(categoryValues);
 
             DBHelper.update(advert);
 

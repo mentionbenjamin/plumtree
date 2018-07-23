@@ -88,7 +88,7 @@ public class Advert {
 
     @Column(name = "categories")
     @Enumerated(value = EnumType.STRING) //apparently very inefficient with a larger db, should just store as ordinals/numbers
-    @ElementCollection(targetClass = CategoryType.class)
+    @ElementCollection(targetClass = CategoryType.class, fetch = FetchType.EAGER)
     public List<CategoryType> getCategories() {
         return categories;
     }
@@ -146,7 +146,7 @@ public class Advert {
     //need a method that takes in an array of strings and adds them to this.categories after converting to category type
     public void addCategoriesThatWereStrings(List<String> categoryValues) {
         for (String categoryValue : categoryValues) {
-            addCategory(CategoryType.valueOf(categoryValue.toUpperCase()));
+            this.categories.add(CategoryType.valueOf(categoryValue.toUpperCase()));
         }
     }
 }
