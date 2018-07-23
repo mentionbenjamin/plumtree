@@ -155,6 +155,13 @@ public class Advert {
         this.deleted = deleted;
     }
 
+
+    public void delete() {
+        setDeleted(true);
+    }
+
+
+
     public boolean hasCategory(CategoryType category) {
         return this.categories.contains(category);
     }
