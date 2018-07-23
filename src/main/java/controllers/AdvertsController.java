@@ -252,6 +252,18 @@ public class AdvertsController {
         }, velocityTemplateEngine);
 
 
+
+        // Sell item
+        post("/adverts/:id/sell", (req, res) -> {
+            int advertId = Integer.parseInt(req.params(":id"));
+            Advert advert = DBHelper.findById(Advert.class, advertId);
+            advert.sell();
+            DBHelper.update(advert);
+
+            res.redirect("/adverts");
+            return null;
+        }, velocityTemplateEngine);
+
     }
 }
 

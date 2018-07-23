@@ -23,7 +23,6 @@ public class Advert {
     private List<CategoryType> categories;
     private Shop shop;
     private Timestamp timestamp;
-
     private String formattedTimestamp;
 
     public Advert() {}
@@ -139,6 +138,9 @@ public class Advert {
         return this.categories.contains(category);
     }
 
+    public void sell() {
+        this.categories.add(CategoryType.SOLD);
+    }
 }
 
 

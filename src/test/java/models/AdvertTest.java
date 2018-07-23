@@ -158,4 +158,10 @@ public class AdvertTest {
         assertEquals(false, advert.hasCategory(CategoryType.TECHNOLOGY));
     }
 
+    @Test
+    public void canSellAdvert() {
+        advert.sell();
+        assertEquals(true, advert.hasCategory(CategoryType.SOLD));
+    }
+
 }
