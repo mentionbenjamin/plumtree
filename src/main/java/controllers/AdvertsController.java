@@ -165,6 +165,8 @@ public class AdvertsController {
             // then with the variable names assisn to a new advert
 
             // TODO: find a way to get shop from db & add it to advert
+
+            // TODO: find out how much cheating this is...
             Shop shop = DBShop.findByShopName("Plumtree");
             advert.setShop(shop);
 
