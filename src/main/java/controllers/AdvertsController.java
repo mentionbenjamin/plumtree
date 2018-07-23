@@ -9,10 +9,7 @@ import models.Shop;
 import spark.ModelAndView;
 import spark.template.velocity.VelocityTemplateEngine;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import static spark.Spark.get;
 import static spark.Spark.post;
@@ -166,16 +163,29 @@ public class AdvertsController {
 
             // TODO: find a way to get shop from db & add it to advert
 
-            // TODO: find out how much cheating this is...
             Shop shop = DBShop.findByShopName("Plumtree");
             advert.setShop(shop);
 
-            String categoryValue = req.queryParams("category");
-            advert.addCategory(CategoryType.valueOf(categoryValue.toUpperCase()));
-            // now get the category inputted and add the value of that category to the advert
+            List<CategoryType> categories = Arrays.asList(CategoryType.values());
+            List<String> categoryValues = new ArrayList<>();
+            List<String> nullCategoryValues = new ArrayList<>();
+
+            for (CategoryType category : categories) {
+                String categoryName = category.getCategory();
+                String categoryValue = req.queryParams(categoryName);
+                if (categoryValue == null) {
+                    nullCategoryValues.add(categoryValue);
+                }
+                else {
+                    categoryValues.add(categoryValue);
+                }
+            }
+
+            for (String categoryValue : categoryValues) {
+                advert.addCategory(CategoryType.valueOf(categoryValue.toUpperCase()));
+            }
 
             DBHelper.save(advert);
-            // finally save the advert
 
             res.redirect("/adverts");
             return null;

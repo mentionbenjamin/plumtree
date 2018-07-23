@@ -22,10 +22,11 @@
     <!--#end-->
     <!--</select>-->
 
-    <label for="category">Category</label>
     #foreach($category in $categories)
-    <input type="checkbox" id="category" name="category" value="$category.getCategory()">
+    <label for="$category.getCategory()">
+    <input type="checkbox" id="$category.getCategory()" name="$category.getCategory()" value="$category.getCategory()">
     $category.getCategory()
+    </label>
     #end
     <input type="submit" value="Post" class="button">
 
