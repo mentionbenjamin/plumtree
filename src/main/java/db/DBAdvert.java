@@ -7,11 +7,14 @@ import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.criterion.MatchMode;
 import org.hibernate.criterion.Order;
+import org.hibernate.criterion.Restrictions;
 import sun.tools.java.ClassType;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ResourceBundle;
 
 public class DBAdvert {
 
@@ -25,14 +28,22 @@ public class DBAdvert {
 //    }
 
 
-    // ORDER BY POSTED TIME
-    public static List<Advert> orderByPostedTime() {
+
+    // ORDER BY PRICE EITHER
+    public static List<Advert> orderByPrice(boolean descTrueAscFalse) {
         session = HibernateUtil.getSessionFactory().openSession();
         List<Advert> results = null;
         try {
-            Criteria cr = session.createCriteria(Advert.class);
-            cr.addOrder(Order.desc("timestamp"));
-            results = cr.list();
+            if (descTrueAscFalse) {
+                Criteria cr = session.createCriteria(Advert.class);
+                cr.addOrder(Order.desc("price"));
+                results = cr.list();
+            }
+            else {
+                Criteria cr = session.createCriteria(Advert.class);
+                cr.addOrder(Order.asc("price"));
+                results = cr.list();
+            }
         }
         catch (HibernateException e) {
             e.printStackTrace();
@@ -40,9 +51,36 @@ public class DBAdvert {
         finally {
             session.close();
         }
-
         return results;
     }
+
+
+
+    // ORDER BY TIME POSTED EITHER
+    public static List<Advert> orderByTime(boolean descTrueAscFalse) {
+        session = HibernateUtil.getSessionFactory().openSession();
+        List<Advert> results = null;
+        try {
+            if (descTrueAscFalse) {
+                Criteria cr = session.createCriteria((Advert.class));
+                cr.addOrder(Order.desc("timestamp"));
+                results = cr.list();
+            }
+            else {
+                Criteria cr = session.createCriteria((Advert.class));
+                cr.addOrder(Order.asc("timestamp"));
+                results = cr.list();
+            }
+        }
+        catch (HibernateException e) {
+            e.printStackTrace();
+        }
+        finally {
+            session.close();
+        }
+        return results;
+    }
+
 
 
     // FIND BY CATEGORY
@@ -65,6 +103,49 @@ public class DBAdvert {
             session.close();
         }
         return results; // finally, return the results of the above...
+    }
+
+
+
+    // FIND BY TITLE
+    public static List<Advert> findByTitle(String title) {
+        session = HibernateUtil.getSessionFactory().openSession();
+        List<Advert> results = null;
+        try {
+            Criteria cr = session.createCriteria(Advert.class);
+//            cr.add(Restrictions.eq("title", title));
+            //trying to search for things 'like' the input
+            cr.add(Restrictions.ilike("title", title, MatchMode.ANYWHERE));
+            results = cr.list();
+        }
+        catch (HibernateException e) {
+            e.printStackTrace();
+        }
+        finally {
+            session.close();
+        }
+        return results;
+    }
+
+
+
+    // FIND BY PRICE
+    public static List<Advert> findByPrice(double price) {
+        session = HibernateUtil.getSessionFactory().openSession();
+        List<Advert> results = null;
+        try {
+            Criteria cr = session.createCriteria(Advert.class);
+            // trying to find a range of prices
+            cr.add(Restrictions.between("price", price - 10, price + 10));
+            results = cr.list();
+        }
+        catch (HibernateException e ) {
+            e.printStackTrace();
+        }
+        finally {
+            session.close();
+        }
+        return results;
     }
 
 

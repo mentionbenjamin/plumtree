@@ -1,0 +1,22 @@
+
+<div>
+    <table>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Image</th>
+            <th>Time Posted</th>
+        </tr>
+        #foreach($advert in $foundAdverts)
+        <tr>
+            <td>$advert.getTitle()</td>
+            <td>$advert.getDescription()</td>
+            <td>$advert.getPrice()</td>
+            <td><img src="$advert.getImagePath()"/></td>
+            <td>$advert.getFormattedTimestamp()</td>
+            <td><a href="/adverts/$advert.getId()">view advert</a></td>
+        </tr>
+        #end
+    </table>
+</div>

@@ -1,7 +1,5 @@
 <h1>Plumtree</h1>
-<a href="/adverts/search">Testing Search</a>
-<br>
-<br>
+
 <a href="/adverts/new">Create new advert</a>
 <br>
 <a href="/adverts">All</a>
@@ -17,8 +15,6 @@
 <a href="/adverts/sorted-by-price-desc">Most Expensive First</a>
 <a href="/adverts/sorted-by-price-asc">Cheapest First</a>
 
-
-
 <div>
     <table>
         <tr>
@@ -28,15 +24,15 @@
             <th>Image</th>
             <th>Time Posted</th>
         </tr>
-        #foreach($advert in $adverts)
-            <tr>
-                <td>$advert.getTitle()</td>
-                <td>$advert.getDescription()</td>
-                <td>$advert.getPrice()</td>
-                <td><img src="$advert.getImagePath()"/></td>
-                <td>$advert.getFormattedTimestamp()</td>
-                <td><a href="/adverts/$advert.getId()">view advert</a></td>
-            </tr>
+        #foreach($advert in $sortedAdvertsByPrice)
+        <tr>
+            <td>$advert.getTitle()</td>
+            <td>$advert.getDescription()</td>
+            <td>$advert.getPrice()</td>
+            <td><img src="$advert.getImagePath()"/></td>
+            <td>$advert.getFormattedTimestamp()</td>
+            <td><a href="/adverts/$advert.getId()">view advert</a></td>
+        </tr>
         #end
     </table>
 </div>

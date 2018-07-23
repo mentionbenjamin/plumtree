@@ -1,0 +1,25 @@
+<h1>Found Advert</h1>
+
+<div>
+    <table>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Image</th>
+            <th>Time Posted</th>
+        </tr>
+        <tr>
+            <td>$foundAdvert.getTitle()</td>
+            <td>$foundAdvert.getDescription()</td>
+            <td>$foundAdvert.getPrice()</td>
+            <td><img src="$foundAdvert.getImagePath()"/></td>
+            <td>$foundAdvert.getFormattedTimestamp()</td>
+        </tr>
+    </table>
+</div>
+
+<a href="/adverts/$foundAdvert.getId()/edit">Edit Advert</a>
+<form action="/adverts/$foundAdvert.getId()/delete" method="post">
+    <input type="submit" value="Delete Advert">
+</form>

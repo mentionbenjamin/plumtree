@@ -21,11 +21,13 @@ public class AdvertsController {
 
     public AdvertsController() {
         this.setUpEndPoints();
-        }
+    }
 
     private void setUpEndPoints() {
 
         VelocityTemplateEngine velocityTemplateEngine = new VelocityTemplateEngine();
+
+
 
         // Adverts
         get("/adverts", (req, res) -> {
@@ -34,6 +36,105 @@ public class AdvertsController {
             List<Advert> adverts = DBHelper.findAll(Advert.class);
             model.put("template", "templates/adverts/index.vtl");
             model.put("adverts", adverts);
+
+            return new ModelAndView(model, "templates/layout.vtl");
+        }, velocityTemplateEngine);
+
+
+
+        // Sort Adverts By Timestamp Descending
+        get("/adverts/sorted-by-time-desc", (req, res) -> {
+            Map<String, Object> model = new HashMap<>();
+
+            List<Advert> sortedAdvertsByTimeDesc = DBAdvert.orderByTime(true);
+            model.put("template", "templates/adverts/displays/time_desc.vtl");
+            model.put("sortedAdvertsByTime", sortedAdvertsByTimeDesc);
+
+            return new ModelAndView(model, "templates/layout.vtl");
+        }, velocityTemplateEngine);
+
+
+
+        // Sort Adverts By Timestamp Ascending
+        get("/adverts/sorted-by-time-asc", (req, res) -> {
+            Map<String, Object> model = new HashMap<>();
+
+            List<Advert> sortedAdvertsByTimeAsc = DBAdvert.orderByTime(false);
+            model.put("template", "templates/adverts/displays/time_asc.vtl");
+            model.put("sortedAdvertsByTime", sortedAdvertsByTimeAsc);
+
+            return new ModelAndView(model, "templates/layout.vtl");
+        }, velocityTemplateEngine);
+
+
+
+        // Sort Adverts By Price Descending
+        get("/adverts/sorted-by-price-desc", (req, res) -> {
+            Map<String, Object> model = new HashMap<>();
+
+            List<Advert> sortedAdvertsByPriceDescending = DBAdvert.orderByPrice(true);
+            model.put("template", "templates/adverts/displays/price_desc.vtl");
+            model.put("sortedAdvertsByPrice", sortedAdvertsByPriceDescending);
+
+            return new ModelAndView(model, "templates/layout.vtl");
+        }, velocityTemplateEngine);
+
+
+
+        // Sort Adverts By Price Ascending
+        get("/adverts/sorted-by-price-asc", (req, res) -> {
+            Map<String, Object> model = new HashMap<>();
+
+            List<Advert> sortedAdvertsByPriceAscending = DBAdvert.orderByPrice(false);
+            model.put("template", "templates/adverts/displays/price_asc.vtl");
+            model.put("sortedAdvertsByPrice", sortedAdvertsByPriceAscending);
+
+            return new ModelAndView(model, "templates/layout.vtl");
+        }, velocityTemplateEngine);
+
+
+
+        // Search
+        get("/adverts/search", (req, res) -> {
+            Map<String, Object> model = new HashMap<>();
+
+            model.put("template", "templates/adverts/searches/search.vtl");
+
+            return new ModelAndView(model, "templates/layout.vtl");
+        }, velocityTemplateEngine);
+
+
+
+        post("/adverts/search/title", (req, res) -> {
+            Map<String, Object> model = new HashMap<>();
+
+            String submittedTitle = req.queryParams("search-results");
+            List<Advert> foundAdverts = DBAdvert.findByTitle(submittedTitle);
+            if (foundAdverts.size() == 0) {
+                model.put("template", "templates/adverts/searches/no_result.vtl");
+            }
+            else {
+                model.put("template", "templates/adverts/searches/results.vtl");
+                model.put("foundAdverts", foundAdverts);
+            }
+
+            return new ModelAndView(model, "templates/layout.vtl");
+        }, velocityTemplateEngine);
+
+
+
+        post("/adverts/search/price", (req, res) -> {
+            Map<String, Object> model = new HashMap<>();
+
+            double submittedPrice = Double.parseDouble(req.queryParams("search-results"));
+            List<Advert> foundAdverts = DBAdvert.findByPrice(submittedPrice);
+            if (foundAdverts.size() == 0) {
+                model.put("template", "templates/adverts/searches/no_result");
+            }
+            else {
+                model.put("template", "templates/adverts/searches/results.vtl");
+                model.put("foundAdverts", foundAdverts);
+            }
 
             return new ModelAndView(model, "templates/layout.vtl");
         }, velocityTemplateEngine);
@@ -50,7 +151,6 @@ public class AdvertsController {
 
             return new ModelAndView(model, "templates/layout.vtl");
         }, velocityTemplateEngine);
-
 
 
 
@@ -126,7 +226,6 @@ public class AdvertsController {
 
 
 
-
         // View Advert
         get("/adverts/:id", (req, res) -> {
             HashMap<String, Object> model = new HashMap<>();
@@ -139,7 +238,6 @@ public class AdvertsController {
 
             return new ModelAndView(model, "templates/layout.vtl");
         }, velocityTemplateEngine);
-
 
 
 

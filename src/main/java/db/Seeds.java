@@ -58,8 +58,11 @@ public class Seeds {
         // addAdvertToShop
 //        DBAdvert.addAdvertToShop(advert2, shop);
 
-        // orderByPostedTime
-//        List<Advert> orderedAdverts = DBAdvert.orderByPostedTime();
+        // orderByPostedTimeDescending
+//        List<Advert> orderedAdvertsByTimeDescending = DBAdvert.orderByPostedTimeDescending();
+
+        // orderByPostedTimeAscending
+//        List<Advert> orderedAdvertsByTieAscending = DBAdvert.orderByPostedTimeAscending();
 
         // findByCategory
 //        List<Advert> foundAdvertsInCategory = DBAdvert.findByCategory(CategoryType.TECHNOLOGY);
@@ -68,10 +71,22 @@ public class Seeds {
 //        List<CategoryType> categories = Arrays.asList(CategoryType.values());
 
 
-        List<CategoryType> categories = advert1.getCategories();
-        boolean testBoolean = advert1.hasCategory(CategoryType.TRANSPORT);
+//        List<CategoryType> categories = advert1.getCategories();
+//        boolean testBoolean = advert1.hasCategory(CategoryType.TRANSPORT);
 
-        Advert foundAdvert = DBHelper.findById(Advert.class, advert2.getId());
+//        Advert foundAdvert = DBHelper.findById(Advert.class, advert2.getId());
+
+//        List<Advert> orderedAdvertsByPriceExpensiveFirst = DBAdvert.orderByPrice(true);
+//        List<Advert> orderedAdvertsByPriceCheapFirst = DBAdvert.orderByPrice(false);
+
+//        List<Advert> advertsFoundByTitle = DBAdvert.findByTitle("Bike");
+//        List<Advert> advertsFoundByTitleWhichDoesntExist = DBAdvert.findByTitle("Error");
+
+//        List<Advert> foundAdvertsByPrice = DBAdvert.findByPrice(100.00);
+//        List<Advert> foundAdvertsByPriceNoneExists = DBAdvert.findByPrice(2.00);
+
+//        List<Advert> orderedAdvertsByTimeNewestFirst = DBAdvert.orderByTime(true);
+//        List<Advert> orderedAdvertsByTimeOldestFirst = DBAdvert.orderByTime(false);
     }
 
 
