@@ -34,7 +34,6 @@ public class Advert {
         this.price = price;
         this.imagePath = imagePath;
         this.categories = new ArrayList<>();
-        // TODO: decide whether to get rid of this, probably redundant now
         this.timestamp = Timestamp.from(Instant.now());
         // TODO: add in 'th', 'rd' etc after day, will require some work in a new method
         this.formattedTimestamp = new SimpleDateFormat("dd MMM, yyyy").format(this.timestamp);
