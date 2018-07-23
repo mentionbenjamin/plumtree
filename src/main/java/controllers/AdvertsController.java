@@ -168,15 +168,11 @@ public class AdvertsController {
 
             List<CategoryType> categories = Arrays.asList(CategoryType.values());
             List<String> categoryValues = new ArrayList<>();
-            List<String> nullCategoryValues = new ArrayList<>();
 
             for (CategoryType category : categories) {
                 String categoryName = category.getCategory();
                 String categoryValue = req.queryParams(categoryName);
-                if (categoryValue == null) {
-                    nullCategoryValues.add(categoryValue);
-                }
-                else {
+                if (categoryValue != null) {
                     categoryValues.add(categoryValue);
                 }
             }
