@@ -18,15 +18,19 @@
             <th>Image</th>
             <th>Time Posted</th>
         </tr>
-        #foreach($advert in $adverts)
-        <tr>
-            <td>$advert.getTitle()</td>
-            <td>$advert.getDescription()</td>
-            <td>$advert.getPrice()</td>
-            <td><img src="$advert.getImagePath()"/></td>
-            <td>$advert.getFormattedTimestamp()</td>
-            <td><a href="/adverts/$advert.getId()">view advert</a></td>
-        </tr>
-        #end
+          #foreach($advert in $adverts)
+                #if($advert.getDeleted())
+
+                #else
+                    <tr>
+                        <td>$advert.getTitle()</td>
+                        <td>$advert.getDescription()</td>
+                        <td>$advert.getPrice()</td>
+                        <td><img src="$advert.getImagePath()"/></td>
+                        <td>$advert.getFormattedTimestamp()</td>
+                        <td><a href="/adverts/$advert.getId()">view advert</a></td>
+                    </tr>
+                #end
+                #end
     </table>
 </div>
