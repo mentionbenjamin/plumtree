@@ -164,4 +164,9 @@ public class AdvertTest {
         assertEquals(true, advert.hasCategory(CategoryType.SOLD));
     }
 
+    @Test
+    public void hasDeletedBoolean() {
+        assertEquals(false, advert.getDeleted());
+    }
+
 }

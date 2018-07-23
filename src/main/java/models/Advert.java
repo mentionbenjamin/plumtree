@@ -24,6 +24,7 @@ public class Advert {
     private Shop shop;
     private Timestamp timestamp;
     private String formattedTimestamp;
+    private boolean deleted;
 
     public Advert() {}
 
@@ -34,6 +35,7 @@ public class Advert {
         this.imagePath = imagePath;
         this.categories = new ArrayList<>();
         this.timestamp = Timestamp.from(Instant.now());
+        this.deleted = false;
     }
 
 
@@ -145,7 +147,12 @@ public class Advert {
     }
 
 
-
+    public boolean getDeleted() {
+        return deleted;
+    }
+    public void setDeleted(boolean deleted) {
+        this.deleted = deleted;
+    }
 
     public boolean hasCategory(CategoryType category) {
         return this.categories.contains(category);
