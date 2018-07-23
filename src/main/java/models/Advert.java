@@ -180,7 +180,7 @@ public class Advert {
     }
 
 
-    public List<String> getValuesOfAllCategories() {
+    public List<String> giveValuesOfAllCategories() {
         List<String> values = new ArrayList<>();
         for (CategoryType category : categories) {
             String categoryValue = category.getCategory();
@@ -188,6 +188,7 @@ public class Advert {
         }
         return values;
     }
+
 }
 
 

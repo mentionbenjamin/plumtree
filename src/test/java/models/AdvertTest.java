@@ -186,7 +186,7 @@ public class AdvertTest {
         advert.addCategory(CategoryType.TRANSPORT);
         advert.addCategory(CategoryType.FASHION);
         assertEquals(2, advert.getCategories().size());
-        assertEquals(2, advert.getValuesOfAllCategories().size());
+        assertEquals(2, advert.giveValuesOfAllCategories().size());
     }
 
 }

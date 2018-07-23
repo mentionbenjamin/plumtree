@@ -87,6 +87,7 @@ public class Seeds {
 
 //        List<Advert> orderedAdvertsByTimeNewestFirst = DBAdvert.orderByTime(true);
 //        List<Advert> orderedAdvertsByTimeOldestFirst = DBAdvert.orderByTime(false);
+
     }
 
 

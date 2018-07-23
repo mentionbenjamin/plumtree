@@ -106,7 +106,11 @@
                     <img src="$advert.getImagePath()" class="advertimage">
 
                     <div class="advert-info-container">
-                        <div class="advert-category">TRANSPORT</div>
+                        <div class="advert-category">
+                            #foreach($category in $advert.giveValuesOfAllCategories())
+                                $category.toUpperCase()
+                            #end
+                        </div>
                         <div class="adverttitle">$advert.getTitle()</div>
                         <div class="advertprice">£ $advert.getPrice()</div>
                     </div>
