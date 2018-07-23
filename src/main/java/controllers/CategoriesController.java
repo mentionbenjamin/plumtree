@@ -96,6 +96,46 @@ public class CategoriesController {
 
 
 
+        // Filter by category House
+        get("/house", (req, res) -> {
+            Map<String, Object> model = new HashMap<>();
+            List<Advert> adverts = DBAdvert.findByCategory(CategoryType.HOUSE);
+
+            model.put("adverts", adverts);
+            model.put("template", "templates/adverts/categories/house.vtl");
+
+            return new ModelAndView(model, "templates/layout.vtl");
+
+        }, velocityTemplateEngine);
+
+
+
+        // Filter by category Kitchen
+        get("/kitchen", (req, res) -> {
+            Map<String, Object> model = new HashMap<>();
+            List<Advert> adverts = DBAdvert.findByCategory(CategoryType.KITCHEN);
+
+            model.put("adverts", adverts);
+            model.put("template", "templates/adverts/categories/kitchen.vtl");
+
+            return new ModelAndView(model, "templates/layout.vtl");
+
+        }, velocityTemplateEngine);
+
+
+
+        // Filter by category Misc
+        get("/misc", (req, res) -> {
+            Map<String, Object> model = new HashMap<>();
+            List<Advert> adverts = DBAdvert.findByCategory(CategoryType.MISC);
+
+            model.put("adverts", adverts);
+            model.put("template", "templates/adverts/categories/misc.vtl");
+
+            return new ModelAndView(model, "templates/layout.vtl");
+
+        }, velocityTemplateEngine);
+
 
     }
 }
