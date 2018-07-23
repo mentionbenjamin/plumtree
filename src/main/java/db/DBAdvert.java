@@ -7,6 +7,7 @@ import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.criterion.MatchMode;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 import sun.tools.java.ClassType;
@@ -112,7 +113,9 @@ public class DBAdvert {
         List<Advert> results = null;
         try {
             Criteria cr = session.createCriteria(Advert.class);
-            cr.add(Restrictions.eq("title", title));
+//            cr.add(Restrictions.eq("title", title));
+            //trying to search for things 'like' the input
+            cr.add(Restrictions.ilike("title", title, MatchMode.ANYWHERE));
             results = cr.list();
         }
         catch (HibernateException e) {

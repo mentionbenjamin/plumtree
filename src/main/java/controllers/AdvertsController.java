@@ -94,7 +94,7 @@ public class AdvertsController {
 
 
 
-        // Search By Title
+        // Search
         get("/adverts/search", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
 
