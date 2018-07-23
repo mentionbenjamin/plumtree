@@ -141,6 +141,14 @@ public class Advert {
     public void sell() {
         this.categories.add(CategoryType.SOLD);
     }
+
+
+    //need a method that takes in an array of strings and adds them to this.categories after converting to category type
+    public void addCategoriesThatWereStrings(List<String> categoryValues) {
+        for (String categoryValue : categoryValues) {
+            addCategory(CategoryType.valueOf(categoryValue.toUpperCase()));
+        }
+    }
 }
 
 

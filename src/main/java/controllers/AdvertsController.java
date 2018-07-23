@@ -177,9 +177,7 @@ public class AdvertsController {
                 }
             }
 
-            for (String categoryValue : categoryValues) {
-                advert.addCategory(CategoryType.valueOf(categoryValue.toUpperCase()));
-            }
+            advert.addCategoriesThatWereStrings(categoryValues);
 
             DBHelper.save(advert);
 
