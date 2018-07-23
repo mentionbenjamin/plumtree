@@ -128,13 +128,13 @@ public class Advert {
     @Column(name = "formatted_posted_time")
     public String getFormattedTimestamp() {
         String toCheckWhichDay = new SimpleDateFormat("dd").format(this.timestamp);
-        if (toCheckWhichDay.equals("01")) {
+        if (toCheckWhichDay.endsWith("1")) {
             return this.formattedTimestamp = new SimpleDateFormat("dd'" + "st" + "' MMM, yyyy").format(this.timestamp);
         }
-        else if (toCheckWhichDay.equals("02")) {
+        else if (toCheckWhichDay.endsWith("2")) {
             return this.formattedTimestamp = new SimpleDateFormat("dd'" + "nd" + "' MMM, yyyy").format(this.timestamp);
         }
-        else if (toCheckWhichDay.equals("03")) {
+        else if (toCheckWhichDay.endsWith("3")) {
             return this.formattedTimestamp = new SimpleDateFormat("dd'" + "rd" + "' MMM, yyyy").format(this.timestamp);
         }
         else {
