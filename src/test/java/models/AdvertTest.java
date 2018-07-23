@@ -169,4 +169,10 @@ public class AdvertTest {
         assertEquals(false, advert.getDeleted());
     }
 
+    @Test
+    public void canSetDeletedBoolean() {
+        advert.setDeleted(true);
+        assertEquals(true, advert.getDeleted());
+    }
+
 }
