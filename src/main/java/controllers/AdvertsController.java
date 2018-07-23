@@ -195,7 +195,7 @@ public class AdvertsController {
             Advert advert = DBHelper.findById(Advert.class, advertId);
             model.put("advert", advert);
 
-            List<CategoryType> categories = Arrays.asList(CategoryType.values()); // populate dropdown categories
+            List<CategoryType> categories = Arrays.asList(CategoryType.values());// populate dropdown categories
             model.put("categories", categories);
             model.put("template", "templates/adverts/edit.vtl");
 

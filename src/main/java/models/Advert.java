@@ -138,12 +138,13 @@ public class Advert {
         return this.categories.contains(category);
     }
 
+
     public void sell() {
+        this.categories.clear();
         this.categories.add(CategoryType.SOLD);
     }
 
 
-    //need a method that takes in an array of strings and adds them to this.categories after converting to category type
     public void addCategoriesThatWereStrings(List<String> categoryValues) {
         for (String categoryValue : categoryValues) {
             this.categories.add(CategoryType.valueOf(categoryValue.toUpperCase()));
