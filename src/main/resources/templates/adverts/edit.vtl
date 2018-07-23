@@ -17,11 +17,12 @@
 
     <!--TODO: find a way to set the category to the existing one-->
 
-    <!--<label for="category">Categories</label>-->
-    <!--#foreach($category in $categories)-->
-    <!--<input type="checkbox" id="category" name="category" value="$category.getCategory()">-->
-    <!--$category.getCategory()-->
-    <!--#end-->
+    #foreach($category in $categories)
+    <label for="$category.getCategory()">
+        <input type="checkbox" id="$category.getCategory()" name="$category.getCategory()" value="$category.getCategory()">
+        $category.getCategory()
+    </label>
+    #end
 
     <input type="submit" value="Post" class="button">
 

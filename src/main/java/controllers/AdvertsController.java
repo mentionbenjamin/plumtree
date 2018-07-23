@@ -9,10 +9,7 @@ import models.Shop;
 import spark.ModelAndView;
 import spark.template.velocity.VelocityTemplateEngine;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import static spark.Spark.get;
 import static spark.Spark.post;
@@ -165,15 +162,24 @@ public class AdvertsController {
             // then with the variable names assisn to a new advert
 
             // TODO: find a way to get shop from db & add it to advert
+
             Shop shop = DBShop.findByShopName("Plumtree");
             advert.setShop(shop);
 
-            String categoryValue = req.queryParams("category");
-            advert.addCategory(CategoryType.valueOf(categoryValue.toUpperCase()));
-            // now get the category inputted and add the value of that category to the advert
+            List<CategoryType> categories = Arrays.asList(CategoryType.values());
+            List<String> categoryValues = new ArrayList<>();
+
+            for (CategoryType category : categories) {
+                String categoryName = category.getCategory();
+                String categoryValue = req.queryParams(categoryName);
+                if (categoryValue != null) {
+                    categoryValues.add(categoryValue);
+                }
+            }
+
+            advert.addCategoriesThatWereStrings(categoryValues);
 
             DBHelper.save(advert);
-            // finally save the advert
 
             res.redirect("/adverts");
             return null;
@@ -189,7 +195,7 @@ public class AdvertsController {
             Advert advert = DBHelper.findById(Advert.class, advertId);
             model.put("advert", advert);
 
-            List<CategoryType> categories = Arrays.asList(CategoryType.values()); // populate dropdown categories
+            List<CategoryType> categories = Arrays.asList(CategoryType.values());// populate dropdown categories
             model.put("categories", categories);
             model.put("template", "templates/adverts/edit.vtl");
 
@@ -214,9 +220,19 @@ public class AdvertsController {
             advert.setPrice(price);
             advert.setImagePath(imagePath);
 
-//            String categoryValue = req.queryParams("category");
-//            advert.getCategories().clear();
-//            advert.addCategory(CategoryType.valueOf(categoryValue.toUpperCase()));
+            List<CategoryType> categories = Arrays.asList(CategoryType.values());
+            List<String> categoryValues = new ArrayList<>();
+
+            for (CategoryType category : categories) {
+                String categoryName = category.getCategory();
+                String categoryValue = req.queryParams(categoryName);
+                if (categoryValue != null) {
+                    categoryValues.add(categoryValue);
+                }
+            }
+
+            advert.getCategories().clear();
+            advert.addCategoriesThatWereStrings(categoryValues);
 
             DBHelper.update(advert);
 

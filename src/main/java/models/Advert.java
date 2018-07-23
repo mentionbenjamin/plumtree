@@ -88,7 +88,7 @@ public class Advert {
 
     @Column(name = "categories")
     @Enumerated(value = EnumType.STRING) //apparently very inefficient with a larger db, should just store as ordinals/numbers
-    @ElementCollection(targetClass = CategoryType.class)
+    @ElementCollection(targetClass = CategoryType.class, fetch = FetchType.EAGER)
     public List<CategoryType> getCategories() {
         return categories;
     }
@@ -138,8 +138,17 @@ public class Advert {
         return this.categories.contains(category);
     }
 
+
     public void sell() {
+        this.categories.clear();
         this.categories.add(CategoryType.SOLD);
+    }
+
+
+    public void addCategoriesThatWereStrings(List<String> categoryValues) {
+        for (String categoryValue : categoryValues) {
+            this.categories.add(CategoryType.valueOf(categoryValue.toUpperCase()));
+        }
     }
 }
 
