@@ -6,12 +6,10 @@
     </head>
     <body>
 
-    <!--<form action="/adverts/search/price" method="post">-->
-    <form action="/adverts/search/title" method="post">
+    <form method="post">
         <input type="text" name="search-results">
-        <input type="radio" name="search-options" value="title" formaction="/adverts/search/title"> By Title
-        <input type="radio" name="search-options" value="price" formaction="/adverts/search/price"> By Price
-        <input type="submit" value="Search">
+        <input type="submit" formaction="/adverts/search/title" value="Search by Title">
+        <input type="submit" formaction="/adverts/search/price" value="Search by Price">
     </form>
 
     <div>
