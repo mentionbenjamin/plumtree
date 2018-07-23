@@ -158,8 +158,6 @@ public class AdvertsController {
             double price = Double.parseDouble(req.queryParams("price"));
             String imagePath = req.queryParams("image-path");
             Advert advert = new Advert(title, description, price, imagePath);
-            // getting back the inputted data and assigning to the respective variable names.
-            // then with the variable names assisn to a new advert
 
             // TODO: find a way to get shop from db & add it to advert
 

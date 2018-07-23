@@ -35,7 +35,7 @@ public class Advert {
         this.categories = new ArrayList<>();
         this.timestamp = Timestamp.from(Instant.now());
         // TODO: add in 'th', 'rd' etc after day, will require some work in a new method
-        this.formattedTimestamp = new SimpleDateFormat("dd MMM, yyyy").format(this.timestamp);
+//        this.formattedTimestamp = new SimpleDateFormat("dd MMM, yyyy").format(this.timestamp);
     }
 
 
@@ -127,11 +127,26 @@ public class Advert {
 
     @Column(name = "formatted_posted_time")
     public String getFormattedTimestamp() {
-        return this.formattedTimestamp;
+        String toCheckWhichDay = new SimpleDateFormat("dd").format(this.timestamp);
+        if (toCheckWhichDay.equals("01")) {
+            return this.formattedTimestamp = new SimpleDateFormat("dd'" + "st" + "' MMM, yyyy").format(this.timestamp);
+        }
+        else if (toCheckWhichDay.equals("02")) {
+            return this.formattedTimestamp = new SimpleDateFormat("dd'" + "nd" + "' MMM, yyyy").format(this.timestamp);
+        }
+        else if (toCheckWhichDay.equals("03")) {
+            return this.formattedTimestamp = new SimpleDateFormat("dd'" + "rd" + "' MMM, yyyy").format(this.timestamp);
+        }
+        else {
+            return this.formattedTimestamp = new SimpleDateFormat("dd'" + "th" + "' MMM, yyyy").format(this.timestamp);
+
+        }
     }
     public void setFormattedTimestamp(String formattedTimestamp) {
         this.formattedTimestamp = formattedTimestamp;
     }
+
+
 
 
     public boolean hasCategory(CategoryType category) {

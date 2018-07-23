@@ -18,10 +18,17 @@
     <!--TODO: find a way to set the category to the existing one-->
 
     #foreach($category in $categories)
+    #if($advert.hasCategory($category))
+    <label for="$category.getCategory()">
+        <input checked type="checkbox" id="$category.getCategory()" name="$category.getCategory()" value="$category.getCategory()">
+        $category.getCategory()
+    </label>
+    #else
     <label for="$category.getCategory()">
         <input type="checkbox" id="$category.getCategory()" name="$category.getCategory()" value="$category.getCategory()">
         $category.getCategory()
     </label>
+    #end
     #end
 
     <input type="submit" value="Post" class="button">
