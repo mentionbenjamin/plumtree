@@ -147,6 +147,7 @@ public class Advert {
     }
 
 
+    @Column(name = "deleted")
     public boolean getDeleted() {
         return deleted;
     }
