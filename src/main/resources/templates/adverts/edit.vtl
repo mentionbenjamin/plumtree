@@ -15,7 +15,6 @@
     <label for="image-path">Image</label>
     <input class="inputbox" id="image-path" type="text" name="image-path" value="$advert.getImagePath()" required>
 
-    <!--TODO: find a way to set the category to the existing one-->
 
     #foreach($category in $categories)
     #if($advert.hasCategory($category))

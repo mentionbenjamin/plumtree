@@ -34,8 +34,6 @@ public class Advert {
         this.imagePath = imagePath;
         this.categories = new ArrayList<>();
         this.timestamp = Timestamp.from(Instant.now());
-        // TODO: add in 'th', 'rd' etc after day, will require some work in a new method
-//        this.formattedTimestamp = new SimpleDateFormat("dd MMM, yyyy").format(this.timestamp);
     }
 
 
