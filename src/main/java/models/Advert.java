@@ -178,6 +178,16 @@ public class Advert {
             this.categories.add(CategoryType.valueOf(categoryValue.toUpperCase()));
         }
     }
+
+
+    public List<String> getValuesOfAllCategories() {
+        List<String> values = new ArrayList<>();
+        for (CategoryType category : categories) {
+            String categoryValue = category.getCategory();
+            values.add(categoryValue);
+        }
+        return values;
+    }
 }
 
 
