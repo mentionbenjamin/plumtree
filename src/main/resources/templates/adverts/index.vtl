@@ -100,87 +100,23 @@
     <div class="adverts-section">
         <div class="adverts-container">
 
-
-            <a href="/advert">
+            #foreach($advert in $adverts)
+            <a href="/adverts/$advert.getId()">
                 <div class="advertcontainer">
-                    <img src="https://bit.ly/2LbBJrp" class="advertimage">
+                    <img src="$advert.getImagePath()" class="advertimage">
 
                     <div class="advert-info-container">
                         <div class="advert-category">TRANSPORT</div>
-                        <div class="adverttitle">Schwinn Cruiser (1989)</div>
-                        <div class="advertprice">£75</div>
+                        <div class="adverttitle">$advert.getTitle()</div>
+                        <div class="advertprice">£ $advert.getPrice()</div>
                     </div>
                     <div class="overlay-container">
                         <div class="overlay-child">
-                            <img src="zoom-in.svg" style="width:60px;"></div>
+                            <img src="/images/zoom-in.svg" style="width:60px;"></div>
                     </div>
                 </div>
             </a>
-
-            <a href="/advert">
-                <div class="advertcontainer">
-                    <img src="https://bit.ly/2Lc1bwW" class="advertimage">
-
-                    <div class="advert-info-container">
-                        <div class="advert-category">TRANSPORT</div>
-                        <div class="adverttitle">Cinelli Roadster</div>
-                        <div class="advertprice">£75</div>
-                    </div>
-                    <div class="overlay-container">
-                        <div class="overlay-child">
-                            <img src="zoom-in.svg" style="width:60px;"></div>
-                    </div>
-                </div>
-            </a>
-
-            <!-- <a href="/advert">
-            <div class="advertcontainer">
-            <img src="https://bit.ly/2LtQlBq" class="advertimage">
-
-            <div class="advert-info-container">
-            <div class="advert-category">TRANSPORT</div>
-            <div class="adverttitle">Cinelli Roadster</div>
-            <div class="advertprice">£75</div>
-          </div>
-          <div class="overlay-container">
-          <div class="overlay-child">
-          <img src="zoom-in.svg" style="width:60px;"></div>
-        </div>
-      </div>
-    </a> -->
-
-            <a href="/advert">
-                <div class="advertcontainer">
-                    <img src="https://bit.ly/2NyTkGt" class="advertimage">
-
-                    <div class="advert-info-container">
-                        <div class="advert-category">TRANSPORT</div>
-                        <div class="adverttitle">Cinelli Roadster</div>
-                        <div class="advertprice">£75</div>
-                    </div>
-                    <div class="overlay-container">
-                        <div class="overlay-child">
-                            <img src="zoom-in.svg" style="width:60px;"></div>
-                    </div>
-                </div>
-            </a>
-
-            <a href="/advert">
-                <div class="advertcontainer">
-                    <img src="https://bit.ly/2LtQlBq" class="advertimage">
-
-                    <div class="advert-info-container">
-                        <div class="advert-category">TRANSPORT</div>
-                        <div class="adverttitle">Cinelli Roadster</div>
-                        <div class="advertprice">£75</div>
-                    </div>
-                    <div class="overlay-container">
-                        <div class="overlay-child">
-                            <img src="zoom-in.svg" style="width:60px;"></div>
-                    </div>
-                </div>
-            </a>
-
+            #end
 
 
         </div>
