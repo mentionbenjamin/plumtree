@@ -132,7 +132,8 @@ public class DBAdvert {
         List<Advert> results = null;
         try {
             Criteria cr = session.createCriteria(Advert.class);
-            cr.add(Restrictions.eq("price", price));
+            // trying to find a range of prices
+            cr.add(Restrictions.between("price", price - 10, price + 10));
             results = cr.list();
         }
         catch (HibernateException e ) {
