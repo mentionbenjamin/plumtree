@@ -1,30 +1,160 @@
-<h1>View Advert</h1>
+<!DOCTYPE html>
+<html lang="eng" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/view_stylesheet.css">
 
-<div>
-    <table>
-        <tr>
-            <th>Title</th>
-            <th>Description</th>
-            <th>Price</th>
-            <th>Image</th>
-            <th>Time Posted</th>
-        </tr>
-        <tr>
-            <td>$advert.getTitle()</td>
-            <td>$advert.getDescription()</td>
-            <td>$advert.getPrice()</td>
-            <td><img src="$advert.getImagePath()"/></td>
-            <td>$advert.getFormattedTimestamp()</td>
-        </tr>
-    </table>
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Berkshire+Swash" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700" rel="stylesheet">
+</head>
+
+<body>
+
+<header class="plumtree-logo">
+    plumtree
+</header>
+
+<br><br>
+
+
+
+<div class="outer">
+    <div class="middle">
+
+        <form method="post">
+
+            <div class="full-wrap-container">
+
+                <div class="image-container">
+                    <img class="image-child" src="$advert.getImagePath()"/>
+                </div>
+
+                <div class="grid-container">
+
+                    <div class="title-date-container">
+                        <div class="title-child">
+                            <div class="date-container">
+                                $advert.getFormattedTimestamp()
+                            </div>
+                            <div class="title-container">
+                                $advert.getTitle()
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="price-container"><br>£ $advert.getPrice()</div>
+
+                    <div class="description-container">
+                        $advert.getDescription()
+                    </div>
+
+                    <div class="sold-container">
+                        <div class="sold-child">
+                            <input class="sold-button"
+                                   formaction="/adverts/$advert.getId()/sell"
+                                   type="submit"
+                                   value="MARK AS SOLD">
+                        </div>
+                    </div>
+
+                    <a href="/adverts/$advert.getId()/edit">
+                        <div class="edit-container">
+                            <div class="edit-child">EDIT</div>
+                        </div>
+                    </a>
+
+                    <div class="delete-container">
+                        <div class="delete-child">
+                            <input class="delete-button"
+                                   formaction="/adverts/$advert.getId()/delete"
+                                   type="submit"
+                                   value="DELETE">
+                        </div>
+                    </div>
+        </form>
+
+    </div>
+
 </div>
 
-<a href="/adverts/$advert.getId()/edit">Edit Advert</a>
+<div class="cancel-container">
+    <a class="cancel-button" href="/adverts">BACK</a>
+</div>
 
-<form action="/adverts/$advert.getId()/delete" method="post">
-    <input type="submit" value="Delete Advert">
-</form>
 
-<form action="/adverts/$advert.getId()/sell" method="post">
-    <input type="submit" value="Item Sold">
-</form>
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<h1>View Advert</h1>-->
+
+<!--<div>-->
+    <!--<table>-->
+        <!--<tr>-->
+            <!--<th>Title</th>-->
+            <!--<th>Description</th>-->
+            <!--<th>Price</th>-->
+            <!--<th>Image</th>-->
+            <!--<th>Time Posted</th>-->
+        <!--</tr>-->
+        <!--<tr>-->
+            <!--<td>$advert.getTitle()</td>-->
+            <!--<td>$advert.getDescription()</td>-->
+            <!--<td>$advert.getPrice()</td>-->
+            <!--<td><img src="$advert.getImagePath()"/></td>-->
+            <!--<td>$advert.getFormattedTimestamp()</td>-->
+        <!--</tr>-->
+    <!--</table>-->
+<!--</div>-->
+
+<!--<a href="/adverts/$advert.getId()/edit">Edit Advert</a>-->
+
+<!--<form action="/adverts/$advert.getId()/delete" method="post">-->
+    <!--<input type="submit" value="Delete Advert">-->
+<!--</form>-->
+
+<!--<form action="/adverts/$advert.getId()/sell" method="post">-->
+    <!--<input type="submit" value="Item Sold">-->
+<!--</form>-->
