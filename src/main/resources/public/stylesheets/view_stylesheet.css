@@ -82,34 +82,38 @@ body {
   text-align: center;
   font-size: 30px;
 }
+
 .description-container {
   grid-row: 2/5;
   font-size: 15px;
 }
-.edit-container{
+
+.edit-container {
   background-color: rgba(255, 255, 255, 0.65);
   color: rgba(196, 41, 153, 0.77);
+  grid-column: 8/10;
+  width: 90px;
+  transition: all 0.6s ease;
 }
+
 .sold-container {
   grid-column: 8/12;
   margin-top: 10px;
   margin-bottom: 5px;
 
 }
-.edit-container {
-  grid-column: 8/10;
-  width: 90px;
-  transition: all 0.6s ease;
-}
+
 .delete-container {
   grid-column: 10/12;
   width: 90px;
 }
+
 .sold-container, .edit-container, .delete-container {
   font-size: 10px;
   text-align: center;
   height: 20px;
 }
+
 .sold-child, .edit-child, .delete-child {
   text-align: center;
   position: relative;
@@ -123,9 +127,6 @@ a {
   color: rgba(196, 41, 153, 0.77);
   font-weight: 500;
 }
-
-
-
 
 
 .sold-button {
