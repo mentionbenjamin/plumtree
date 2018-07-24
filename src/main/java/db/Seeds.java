@@ -22,22 +22,38 @@ public class Seeds {
         // TODO: ADD MORE ADVERTS BEFORE PRESENTATION
 
         // adverts
-        Advert advert1 = new Advert("Bike", "Very fast bike", 100.00, "/images/bike1.jpg");
+        Advert advert1 = new Advert("BULLS E-Stream EVO 3 27.5 Plus", "The bike sports a monster 650Wh battery pack for incredible range…up to 137 miles.", 1500.00, "/images/bike2.jpg");
         advert1.setShop(shop);
         advert1.addCategory(CategoryType.TRANSPORT);
         DBHelper.save(advert1);
-        Advert advert2 = new Advert("Dress", "Very nice dress", 50.00, "/images/dress1.jpg");
+        Advert advert2 = new Advert("Audi R8 Coupe - 5204 CC", "Mag ride 29000 miles full Audi service history spare key parking camera bang olufsen upgrade in very good condition, 2 owners, Full service history.", 61500.00, "/images/car1.jpg");
         advert2.setShop(shop);
-        advert2.addCategory(CategoryType.FASHION);
+        advert2.addCategory(CategoryType.TRANSPORT);
         DBHelper.save(advert2);
-        Advert advert3 = new Advert("Phone", "Very good phone", 200.00, "/images/phone1.jpg");
+        Advert advert8 = new Advert("Gregorian Copper Watering Can", "Watering can 15 in long 6 1/4 wide 8 1/2 tall. Fine piece of copper.", 20.00, "/images/wateringcan.jpg");
+        advert8.setShop(shop);
+        advert8.addCategory(CategoryType.GARDEN);
+        DBHelper.save(advert8);
+        Advert advert3 = new Advert("Ducati MTS1200", "Sport is full fat 150bhp power, with the bike always eager for you to twist the throttle more as the bike surges forward and the numbers on the digital dash rapidly rise.", 2250.00, "/images/motorbike1.jpg");
         advert3.setShop(shop);
-        advert3.addCategory(CategoryType.TECHNOLOGY);
+        advert3.addCategory(CategoryType.TRANSPORT);
         DBHelper.save(advert3);
-        Advert advert4 = new Advert("Hose", "Very long hose", 25.00, "/images/hose1.jpg");
+        Advert advert4 = new Advert("1973 Honda CB350", "All round beauty, kept under cover at night. Max speed 205mph", 3250.00, "/images/motorbike2.jpg");
         advert4.setShop(shop);
-        advert4.addCategory(CategoryType.GARDEN);
+        advert4.addCategory(CategoryType.TRANSPORT);
         DBHelper.save(advert4);
+        Advert advert5 = new Advert("Lenovo VIBE P1", "* Android 5.1, Qualcomm Snapdragon 615(MSM8939) Octa Core 1.5GHz, 3GB RAM, 5.5 inch FHD 1920×1080, Gorilla Glass III.", 145.00, "/images/phone1.jpg");
+        advert5.setShop(shop);
+        advert5.addCategory(CategoryType.TECHNOLOGY);
+        DBHelper.save(advert5);
+        Advert advert7 = new Advert("John Deere Riding Lawn Mower", "Sit back, relax and enjoy mowing the lawn with this classic machine ready to plough the garden of fields.", 200.00, "/images/lawnmower1.jpg");
+        advert7.setShop(shop);
+        advert7.addCategory(CategoryType.GARDEN);
+        DBHelper.save(advert7);
+        Advert advert6 = new Advert("1960s Chequered Shirt", "A delightful example of a boy's shirt, made by Littlewoods in the 1960s. It is made from green, brown & and white chequered polyester cotton, with long sleeves, all original buttons and a breast pocket.", 14.00, "/images/clothing1.jpg");
+        advert6.setShop(shop);
+        advert6.addCategory(CategoryType.FASHION);
+        DBHelper.save(advert6);
 
 
 
