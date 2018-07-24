@@ -92,19 +92,10 @@
 
 
 
-    <div class="sort-section">
-        <div class="sort-post-container">
-
-        </div>
-
-    </div>
-
-<!--  ADVERTS START HERE  -->
-
     <div class="adverts-section">
         <div class="adverts-container">
+        #foreach($advert in $adverts)
 
-            #foreach($advert in $adverts)
             <a href="/adverts/$advert.getId()">
                 <div class="advertcontainer">
                     <img src="$advert.getImagePath()" class="advertimage">
@@ -113,7 +104,7 @@
                         <div class="advert-info-backlay"></div>
                         <div class="advert-category">
                             #foreach($category in $advert.giveValuesOfAllCategories())
-                                $category.toUpperCase()
+                            $category.toUpperCase()
                             #end
                         </div>
                         <div class="adverttitle">$advert.getTitle()</div>
@@ -125,10 +116,19 @@
                     </div>
                 </div>
             </a>
-            #end
 
+
+        #end
+        </div>
+    </div>
+
+<!--  ADVERTS START HERE  -->
+
+    <div class="sort-section">
+        <div class="sort-post-container">
 
         </div>
+
     </div>
 
 </div>
