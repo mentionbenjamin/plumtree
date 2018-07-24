@@ -19,6 +19,8 @@ public class Seeds {
         Shop shop = new Shop("Plumtree");
         DBHelper.save(shop);
 
+        // TODO: ADD MORE ADVERTS BEFORE PRESENTATION
+
         // adverts
         Advert advert1 = new Advert("Bike", "Very fast bike", 100.00, "/images/bike1.jpg");
         advert1.setShop(shop);

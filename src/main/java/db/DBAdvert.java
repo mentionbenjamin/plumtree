@@ -113,8 +113,7 @@ public class DBAdvert {
         List<Advert> results = null;
         try {
             Criteria cr = session.createCriteria(Advert.class);
-//            cr.add(Restrictions.eq("title", title));
-            //trying to search for things 'like' the input
+
             cr.add(Restrictions.ilike("title", title, MatchMode.ANYWHERE));
             results = cr.list();
         }
@@ -130,6 +129,7 @@ public class DBAdvert {
 
 
     // FIND BY PRICE
+    // TODO: PROBABLY VESTIGIAL
     public static List<Advert> findByPrice(double price) {
         session = HibernateUtil.getSessionFactory().openSession();
         List<Advert> results = null;

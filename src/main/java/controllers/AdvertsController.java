@@ -92,6 +92,7 @@ public class AdvertsController {
 
 
         // Search
+        // TODO: Maybe vestigial?
         get("/adverts/search", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
 
@@ -120,6 +121,7 @@ public class AdvertsController {
 
 
 
+        // TODO: Maybe vestigial?
         post("/adverts/search/price", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
 
