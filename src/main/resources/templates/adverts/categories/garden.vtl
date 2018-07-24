@@ -14,7 +14,6 @@
 </header>
 
 
-
 <div class="page-layout-container">
 
     <div class="post-section">
@@ -25,11 +24,21 @@
 
     <div class="categories-section">
         <div class="categories-container">
-            <div class="cat-item-1" href="#"><a href="/adverts"><div class="category-all">ALL</div></a></div>
-            <div class="cat-item-2" href="#"><a href="/technology"><div class="category-tech">TECHNOLOGY</div></a></div>
-            <div class="cat-item-3" href="#"><a href="/fashion"><div class="category-clothing">FASHION</div></a></div>
-            <div class="cat-item-4" href="#"><a href="/misc"><div class="category-misc">MISCELLANEOUS</div></a></div>
-            <div class="cat-item-5" href="#"><a href="/adverts/new"><div class="category-post">POST</div></a></div>
+            <div class="cat-item-1" href="#"><a href="/adverts">
+                <div class="category-all">ALL</div>
+            </a></div>
+            <div class="cat-item-2" href="#"><a href="/technology">
+                <div class="category-tech">TECHNOLOGY</div>
+            </a></div>
+            <div class="cat-item-3" href="#"><a href="/fashion">
+                <div class="category-clothing">FASHION</div>
+            </a></div>
+            <div class="cat-item-4" href="#"><a href="/misc">
+                <div class="category-misc">MISCELLANEOUS</div>
+            </a></div>
+            <div class="cat-item-5" href="#"><a href="/adverts/new">
+                <div class="category-post">POST</div>
+            </a></div>
             <!-- SORT -->
             <div class="cat-item-6">
 
@@ -41,9 +50,11 @@
 
                             <div class="sort-left">
                                 <div class="sort-container-cost">
-                                    <a href="/adverts/sorted-by-price-asc"><img class="sort-up" src="/images/up-icon.svg"/></a>
+                                    <a href="/adverts/sorted-by-price-asc"><img class="sort-up"
+                                                                                src="/images/up-icon.svg"/></a>
                                     <div class="sort-cost">COST</div>
-                                    <a href="/adverts/sorted-by-price-desc"><img class="sort-down" src="/images/down-icon.svg"/></a>
+                                    <a href="/adverts/sorted-by-price-desc"><img class="sort-down"
+                                                                                 src="/images/down-icon.svg"/></a>
                                 </div>
                             </div>
 
@@ -55,9 +66,11 @@
 
                             <div class="sort-right">
                                 <div class="sort-container-date">
-                                    <a href="/adverts/sorted-by-time-asc"><img class="sort-up" src="/images/up-icon.svg"/></a>
+                                    <a href="/adverts/sorted-by-time-asc"><img class="sort-up"
+                                                                               src="/images/up-icon.svg"/></a>
                                     <div class="sort-date">DATE</div>
-                                    <a href="/adverts/sorted-by-time-desc"><img class="sort-down" src="/images/down-icon.svg"/></a>
+                                    <a href="/adverts/sorted-by-time-desc"><img class="sort-down"
+                                                                                src="/images/down-icon.svg"/></a>
                                 </div>
                             </div>
                         </label>
@@ -66,11 +79,19 @@
                 </div>
             </div>
 
-            <div class="cat-item-7" href="#"><a href="/transport"><div class="category-transport">TRANSPORT</div></a></div>
+            <div class="cat-item-7" href="#"><a href="/transport">
+                <div class="category-transport">TRANSPORT</div>
+            </a></div>
             <!-- category-kitchen should become category-garden -->
-            <div class="cat-item-8" href="#"><a href="/garden"><div class="category-kitchen">GARDEN</div></a></div>
-            <div class="cat-item-9" href="#"><a href="/house"><div class="category-house">HOUSE</div></a></div>
-            <div class="cat-item-10" href="#"><a href="/sold"><div class="category-sold">SOLD</div></a></div>
+            <div class="cat-item-8" href="#"><a href="/garden">
+                <div class="category-kitchen">GARDEN</div>
+            </a></div>
+            <div class="cat-item-9" href="#"><a href="/house">
+                <div class="category-house">HOUSE</div>
+            </a></div>
+            <div class="cat-item-10" href="#"><a href="/sold">
+                <div class="category-sold">SOLD</div>
+            </a></div>
             <!-- SEARCH -->
             <form method="post">
                 <div class="cat-item-11">
@@ -78,21 +99,24 @@
                         <div id="search-container">
                             <input class="input-box" type="text" name="search-results" placeholder="search away...">
                             <span></span>
-                            <input type="image" name="submit" class="submit" src="/images/search-icon.svg" formaction="/adverts/search/title" alt="Submit">
+                            <input type="image" name="submit" class="submit" src="/images/search-icon.svg"
+                                   formaction="/adverts/search/title" alt="Submit">
                         </div>
                     </div>
                 </div>
             </form>
             <!-- SORT -->
-            <div class="cat-item-12"><div class="category-sort"></div></div>
+            <div class="cat-item-12">
+                <div class="category-sort"></div>
+            </div>
         </div>
     </div>
-
 
 
     <div class="adverts-section">
         <div class="adverts-container">
             #foreach($advert in $adverts)
+            #if($advert.getDeleted() != true)
 
             <a href="/adverts/$advert.getId()">
                 <div class="advertcontainer">
@@ -116,6 +140,7 @@
             </a>
 
 
+            #end
             #end
         </div>
     </div>

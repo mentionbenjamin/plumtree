@@ -93,6 +93,7 @@
     <div class="adverts-section">
         <div class="adverts-container">
             #foreach($advert in $adverts)
+        #if($advert.getDeleted() != true)
 
             <a href="/adverts/$advert.getId()">
                 <div class="advertcontainer">
@@ -116,6 +117,7 @@
             </a>
 
 
+            #end
             #end
         </div>
     </div>
