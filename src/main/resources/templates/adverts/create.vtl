@@ -64,22 +64,19 @@
 
 
             <div class="main-category-container">
-
                 #foreach($category in $categories)
-                #if($category.getCategory() == "Sold")
-
-                #else
-
-
-                <div>
-                    <input type="checkbox" id="$category.getCategory()" name="$category.getCategory()"/>
-                    <label for="$category.getCategory()">$category.getCategory().toUpperCase()</label>
-                </div>
-
+                    #if($category.getCategory() != "Sold")
+                        <div>
+                            <input
+                                    type="checkbox"
+                                    id="$category.getCategory()"
+                                    name="$category.getCategory()"
+                                    value="$category.getCategory()"
+                            />
+                            <label for="$category.getCategory()">$category.getCategory().toUpperCase()</label>
+                        </div>
+                    #end
                 #end
-                #end
-
-
             </div>
 
 
