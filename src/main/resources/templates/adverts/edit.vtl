@@ -31,31 +31,31 @@
 
         <div class="title-container">
             <div class="input-box-container">
-                <input id="title" required class="input-box" type="text" textarea name="title" value="$advert.getTitle()"></textarea><span></span>
+                <input id="title" required class="input-box" type="text" textarea name="title"
+                       value="$advert.getTitle()"></textarea><span></span>
             </div>
         </div>
 
         <div class="description-container">
             <div class="input-box-container">
-                <input id="description" required class="input-box" type="text" textarea name="description" value="$advert.getDescription()"></textarea><span></span>
+                <input id="description" required class="input-box" type="text" textarea name="description"
+                       value="$advert.getDescription()"></textarea><span></span>
             </div>
         </div>
 
         <div class="image-path-container">
             <div class="input-box-container">
-                <input id="image-path" required class="input-box" type="text" textarea name="image-path" value="$advert.getImagePath()"></textarea><span></span>
+                <input id="image-path" required class="input-box" type="text" textarea name="image-path"
+                       value="$advert.getImagePath()"></textarea><span></span>
             </div>
         </div>
 
         <div class="price-container">
             <div class="input-box-container">
-                <input id="price" required class="input-box" type="text" textarea name="price" value="$advert.getPrice()"></textarea><span></span>
+                <input id="price" required class="input-box" type="text" textarea name="price"
+                       value="$advert.getPrice()"></textarea><span></span>
             </div>
         </div>
-
-
-
-
 
 
         <div class="category-container">
@@ -71,14 +71,14 @@
                 #elseif($advert.hasCategory($category))
 
                 <div>
-                    <input checked type="checkbox" id="$category.getCategory()" name="$category.getCategory()" />
+                    <input checked type="checkbox" id="$category.getCategory()" name="$category.getCategory()"/>
                     <label for="$category.getCategory()">$category.getCategory().toUpperCase()</label>
                 </div>
 
                 #else
 
                 <div>
-                    <input type="checkbox" id="$category.getCategory()" name="$category.getCategory()" />
+                    <input type="checkbox" id="$category.getCategory()" name="$category.getCategory()"/>
                     <label for="$category.getCategory()">$category.getCategory().toUpperCase()</label>
                 </div>
 
@@ -102,10 +102,6 @@
         </div>
 
 
-
-
-
-
     </div>
 
     <header class="plumtree-logo">
@@ -125,35 +121,35 @@
 
 <!--<form action="/adverts" method="post">-->
 
-    <!--<label for="title">Title</label>-->
-    <!--<input class="inputbox" id="title" type="text" name="title" value="$advert.getTitle()" required>-->
+<!--<label for="title">Title</label>-->
+<!--<input class="inputbox" id="title" type="text" name="title" value="$advert.getTitle()" required>-->
 
-    <!--<label for="description">Description</label>-->
-    <!--<input class="inputbox" id="description" type="text" name="description" value="$advert.getDescription()" required>-->
+<!--<label for="description">Description</label>-->
+<!--<input class="inputbox" id="description" type="text" name="description" value="$advert.getDescription()" required>-->
 
-    <!--<label for="price">Price</label>-->
-    <!--<input class="inputbox" id="price" type="number" name="price" value="$advert.getPrice()" required>-->
+<!--<label for="price">Price</label>-->
+<!--<input class="inputbox" id="price" type="number" name="price" value="$advert.getPrice()" required>-->
 
-    <!--<label for="image-path">Image</label>-->
-    <!--<input class="inputbox" id="image-path" type="text" name="image-path" value="$advert.getImagePath()" required>-->
+<!--<label for="image-path">Image</label>-->
+<!--<input class="inputbox" id="image-path" type="text" name="image-path" value="$advert.getImagePath()" required>-->
 
 
-    <!--#foreach($category in $categories)-->
+<!--#foreach($category in $categories)-->
 
-    <!--#if($advert.hasCategory($category))-->
+<!--#if($advert.hasCategory($category))-->
 
-    <!--<label for="$category.getCategory()">-->
-        <!--<input checked type="checkbox" id="$category.getCategory()" name="$category.getCategory()" value="$category.getCategory()">-->
-        <!--$category.getCategory()-->
-    <!--</label>-->
-    <!--#else-->
-    <!--<label for="$category.getCategory()">-->
-        <!--<input type="checkbox" id="$category.getCategory()" name="$category.getCategory()" value="$category.getCategory()">-->
-        <!--$category.getCategory()-->
-    <!--</label>-->
-    <!--#end-->
-    <!--#end-->
+<!--<label for="$category.getCategory()">-->
+<!--<input checked type="checkbox" id="$category.getCategory()" name="$category.getCategory()" value="$category.getCategory()">-->
+<!--$category.getCategory()-->
+<!--</label>-->
+<!--#else-->
+<!--<label for="$category.getCategory()">-->
+<!--<input type="checkbox" id="$category.getCategory()" name="$category.getCategory()" value="$category.getCategory()">-->
+<!--$category.getCategory()-->
+<!--</label>-->
+<!--#end-->
+<!--#end-->
 
-    <!--<input type="submit" value="Post" class="button">-->
+<!--<input type="submit" value="Post" class="button">-->
 
 <!--</form>-->

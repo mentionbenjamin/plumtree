@@ -15,52 +15,52 @@
 <form action="/adverts" method="post">
 
 
-<div class="grid-container">
-    <div class="header-container">
-        <header class="parent-header-text">
-            <i>So, what's to track..?</i>
-        </header>
+    <div class="grid-container">
+        <div class="header-container">
+            <header class="parent-header-text">
+                <i>So, what's to track..?</i>
+            </header>
 
-        <header class="child-header-text">
-            share key information to help keep track of your sales.
-            <br>
-            be descriptive—your future self thanks you.
-        </header>
-    </div>
-
-
-    <div class="title-container">
-        <div class="input-box-container">
-            <input id="title" required class="input-box" type="text" textarea name="title" placeholder="add a title here..."></textarea><span></span>
+            <header class="child-header-text">
+                share key information to help keep track of your sales.
+                <br>
+                be descriptive—your future self thanks you.
+            </header>
         </div>
-    </div>
 
-    <div class="description-container">
-        <div class="input-box-container">
-            <input id="description" required class="input-box" type="text" textarea name="description" placeholder="share the deets then..."></textarea><span></span>
+
+        <div class="title-container">
+            <div class="input-box-container">
+                <input id="title" required class="input-box" type="text" textarea name="title"
+                       placeholder="add a title here..."></textarea><span></span>
+            </div>
         </div>
-    </div>
 
-    <div class="image-path-container">
-        <div class="input-box-container">
-            <input id="image-path" required class="input-box" type="text" textarea name="image-path" placeholder="so what's the image path?"></textarea><span></span>
+        <div class="description-container">
+            <div class="input-box-container">
+                <input id="description" required class="input-box" type="text" textarea name="description"
+                       placeholder="share the deets then..."></textarea><span></span>
+            </div>
         </div>
-    </div>
 
-    <div class="price-container">
-        <div class="input-box-container">
-            <input id="price" required class="input-box" type="text" textarea name="price" placeholder="price..."></textarea><span></span>
+        <div class="image-path-container">
+            <div class="input-box-container">
+                <input id="image-path" required class="input-box" type="text" textarea name="image-path"
+                       placeholder="so what's the image path?"></textarea><span></span>
+            </div>
         </div>
-    </div>
+
+        <div class="price-container">
+            <div class="input-box-container">
+                <input id="price" required class="input-box" type="text" textarea name="price"
+                       placeholder="price..."></textarea><span></span>
+            </div>
+        </div>
 
 
+        <div class="category-container">
 
-
-
-
-    <div class="category-container">
-
-        <!--- CATEGORIES START --->
+            <!--- CATEGORIES START --->
 
 
             <div class="main-category-container">
@@ -72,7 +72,7 @@
 
 
                 <div>
-                    <input type="checkbox" id="$category.getCategory()" name="$category.getCategory()" />
+                    <input type="checkbox" id="$category.getCategory()" name="$category.getCategory()"/>
                     <label for="$category.getCategory()">$category.getCategory().toUpperCase()</label>
                 </div>
 
@@ -85,29 +85,25 @@
 
             <!--- CATEGORIES END --->
 
+        </div>
+
+        <div class="save-container">
+            <input type="submit" value="SAVE">
+        </div>
+
+        <div class="cancel-container">
+            <a class="cancel-button" href="/adverts">CANCEL</a>
+        </div>
+
+
     </div>
 
-    <div class="save-container">
-        <input type="submit" value="SAVE">
-    </div>
+    <header class="plumtree-logo">
+        plumtree
+    </header>
 
-    <div class="cancel-container">
-        <a class="cancel-button" href="/adverts">CANCEL</a>
-    </div>
-
-
-
-
-
-
-</div>
-
-<header class="plumtree-logo">
-    plumtree
-</header>
-
-<br><br>
-    </form>
+    <br><br>
+</form>
 
 </body>
 
@@ -119,29 +115,29 @@
 
 <!--<form action="/adverts" method="post">-->
 
-    <!--<label for="title">Title</label>-->
-    <!--<input class="inputbox" id="title" type="text" name="title" required>-->
+<!--<label for="title">Title</label>-->
+<!--<input class="inputbox" id="title" type="text" name="title" required>-->
 
-    <!--<label for="description">Description</label>-->
-    <!--<input class="inputbox" id="description" type="text" name="description" required>-->
+<!--<label for="description">Description</label>-->
+<!--<input class="inputbox" id="description" type="text" name="description" required>-->
 
-    <!--<label for="price">Price</label>-->
-    <!--<input class="inputbox" id="price" type="number" name="price" required>-->
+<!--<label for="price">Price</label>-->
+<!--<input class="inputbox" id="price" type="number" name="price" required>-->
 
-    <!--<label for="image-path">Image</label>-->
-    <!--<input class="inputbox" id="image-path" type="text" name="image-path" required>-->
+<!--<label for="image-path">Image</label>-->
+<!--<input class="inputbox" id="image-path" type="text" name="image-path" required>-->
 
-    <!--#foreach($category in $categories)-->
-    <!--<label for="$category.getCategory()">-->
-
-
-    <!--<input type="checkbox" id="$category.getCategory()" name="$category.getCategory()" value="$category.getCategory()">-->
-    <!--$category.getCategory()-->
+<!--#foreach($category in $categories)-->
+<!--<label for="$category.getCategory()">-->
 
 
-    <!--</label>-->
-    <!--#end-->
-    <!--<input type="submit" value="Post" class="button">-->
+<!--<input type="checkbox" id="$category.getCategory()" name="$category.getCategory()" value="$category.getCategory()">-->
+<!--$category.getCategory()-->
+
+
+<!--</label>-->
+<!--#end-->
+<!--<input type="submit" value="Post" class="button">-->
 
 <!--</form>-->
 
