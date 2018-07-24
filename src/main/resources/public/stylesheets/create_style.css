@@ -76,7 +76,7 @@ body {
 
 /* INPUT BOX START */
 
-#input-box-container {
+.input-box-container {
   position: relative;
   width: 100%;
 }
