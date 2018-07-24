@@ -176,8 +176,11 @@ public class AdvertsController {
             Shop shop = DBShop.findByShopName("Plumtree");
             advert.setShop(shop);
 
+
             List<CategoryType> categories = Arrays.asList(CategoryType.values());
+            //TODO: find out why this 'empty' arraylist has "on" inside it!!!!!!!!!
             List<String> categoryValues = new ArrayList<>();
+
 
             for (CategoryType category : categories) {
                 String categoryName = category.getCategory();
