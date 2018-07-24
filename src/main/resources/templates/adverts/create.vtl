@@ -65,35 +65,50 @@
 
             <div class="main-category-container">
 
-                <div>
-                    <input type="checkbox" id="thursday" />
-                    <label for="thursday">TECHNOLOGY</label>
-                </div>
+                #foreach($category in $categories)
+                #if($category.getCategory() == "Sold")
+
+                #else
+
 
                 <div>
-                    <input type="checkbox" id="tuesday" />
-                    <label for="tuesday">CLOTHING</label>
+                    <input type="checkbox" id="$category.getCategory()" name="$category.getCategory()" />
+                    <label for="$category.getCategory()">$category.getCategory().toUpperCase()</label>
                 </div>
+                #end
+                #end
 
-                <div>
-                    <input type="checkbox" id="monday" />
-                    <label for="monday">TRANSPORT</label>
-                </div>
 
-                <div>
-                    <input type="checkbox" id="wednesday" />
-                    <label for="wednesday">GARDEN</label>
-                </div>
 
-                <div>
-                    <input type="checkbox" id="friday" />
-                    <label for="friday">HOUSE</label>
-                </div>
+                <!--<div>-->
+                    <!--<input type="checkbox" id="thursday" />-->
+                    <!--<label for="thursday">TECHNOLOGY</label>-->
+                <!--</div>-->
 
-                <div>
-                    <input type="checkbox" id="friday" />
-                    <label for="friday">MISCELLANEOUS</label>
-                </div>
+                <!--<div>-->
+                    <!--<input type="checkbox" id="tuesday" />-->
+                    <!--<label for="tuesday">CLOTHING</label>-->
+                <!--</div>-->
+
+                <!--<div>-->
+                    <!--<input type="checkbox" id="monday" />-->
+                    <!--<label for="monday">TRANSPORT</label>-->
+                <!--</div>-->
+
+                <!--<div>-->
+                    <!--<input type="checkbox" id="wednesday" />-->
+                    <!--<label for="wednesday">GARDEN</label>-->
+                <!--</div>-->
+
+                <!--<div>-->
+                    <!--<input type="checkbox" id="friday" />-->
+                    <!--<label for="friday">HOUSE</label>-->
+                <!--</div>-->
+
+                <!--<div>-->
+                    <!--<input type="checkbox" id="friday" />-->
+                    <!--<label for="friday">MISCELLANEOUS</label>-->
+                <!--</div>-->
 
             </div>
 
@@ -191,8 +206,12 @@
 
     <!--#foreach($category in $categories)-->
     <!--<label for="$category.getCategory()">-->
+
+
     <!--<input type="checkbox" id="$category.getCategory()" name="$category.getCategory()" value="$category.getCategory()">-->
     <!--$category.getCategory()-->
+
+
     <!--</label>-->
     <!--#end-->
     <!--<input type="submit" value="Post" class="button">-->

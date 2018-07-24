@@ -149,13 +149,12 @@ input[type="checkbox"]{
   opacity: 0;
   width: 0;
 }
-label[for="sunday"],
-label[for="monday"],
-label[for="tuesday"],
-label[for="wednesday"],
-label[for="thursday"],
-label[for="friday"],
-label[for="saturday"] { /* checkbox off */
+label[for="Technology"],
+label[for="Fashion"],
+label[for="Garden"],
+label[for="Transport"],
+label[for="House"],
+label[for="Misc"] { /* checkbox off */
   font-family: 'Lato', sans-serif;
   font-size: 10.5px;
   font-weight: 400;
@@ -164,13 +163,12 @@ label[for="saturday"] { /* checkbox off */
   opacity: 1;
   transition: 0.3s ease-in-out;
 }
-input:checked + label[for="sunday"],
-input:checked + label[for="monday"],
-input:checked + label[for="tuesday"],
-input:checked + label[for="wednesday"],
-input:checked + label[for="thursday"],
-input:checked + label[for="friday"],
-input:checked + label[for="saturday"] { /* checkbox on */
+input:checked + label[for="Technology"],
+input:checked + label[for="Fashion"],
+input:checked + label[for="Garden"],
+input:checked + label[for="Transport"],
+input:checked + label[for="House"],
+input:checked + label[for="Misc"] { /* checkbox on */
   opacity: 0.5;
   transition: .3s ease-in-out;
 }

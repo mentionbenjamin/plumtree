@@ -154,7 +154,7 @@ public class AdvertsController {
         get("/adverts/new", (req, res) -> {
             HashMap<String, Object> model = new HashMap<>();
 
-            List<CategoryType> categories = Arrays.asList(CategoryType.values()); // populate dropdown categories
+            List<CategoryType> categories = Arrays.asList(CategoryType.values());// populate dropdown categories
             model.put("categories", categories);
             model.put("template", "templates/adverts/create.vtl");
 
