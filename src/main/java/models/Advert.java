@@ -97,7 +97,7 @@ public class Advert {
     }
 
 
-    // TODO: change nullable back to fault -- so advert can be posted without a shop
+    // TODO: change nullable back to false -- so advert can be posted without a shop
     @ManyToOne
     @JoinColumn(name = "shop_id", nullable = true)
     public Shop getShop() {
