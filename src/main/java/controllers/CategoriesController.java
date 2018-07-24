@@ -8,9 +8,7 @@ import models.CategoryType;
 import spark.ModelAndView;
 import spark.template.velocity.VelocityTemplateEngine;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class CategoriesController {
 
@@ -30,8 +28,10 @@ public class CategoriesController {
         get("/fashion", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
             List<Advert> adverts = DBAdvert.findByCategory(CategoryType.FASHION);
+            Set<Advert> uniqueAdverts = new HashSet<>(adverts);
 
-            model.put("adverts", adverts);
+
+            model.put("adverts", uniqueAdverts);
             model.put("template", "templates/adverts/categories/fashion.vtl");
 
             return new ModelAndView(model, "templates/layout.vtl");
@@ -44,8 +44,10 @@ public class CategoriesController {
         get("/garden", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
             List<Advert> adverts = DBAdvert.findByCategory(CategoryType.GARDEN);
+            Set<Advert> uniqueAdverts = new HashSet<>(adverts);
 
-            model.put("adverts", adverts);
+
+            model.put("adverts", uniqueAdverts);
             model.put("template", "templates/adverts/categories/garden.vtl");
 
             return new ModelAndView(model, "templates/layout.vtl");
@@ -58,8 +60,10 @@ public class CategoriesController {
         get("/technology", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
             List<Advert> adverts = DBAdvert.findByCategory(CategoryType.TECHNOLOGY);
+            Set<Advert> uniqueAdverts = new HashSet<>(adverts);
 
-            model.put("adverts", adverts);
+
+            model.put("adverts", uniqueAdverts);
             model.put("template", "templates/adverts/categories/technology.vtl");
 
             return new ModelAndView(model, "templates/layout.vtl");
@@ -72,8 +76,10 @@ public class CategoriesController {
         get("/transport", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
             List<Advert> adverts = DBAdvert.findByCategory(CategoryType.TRANSPORT);
+            Set<Advert> uniqueAdverts = new HashSet<>(adverts);
 
-            model.put("adverts", adverts);
+
+            model.put("adverts", uniqueAdverts);
             model.put("template", "templates/adverts/categories/transport.vtl");
 
             return new ModelAndView(model, "templates/layout.vtl");
@@ -86,8 +92,10 @@ public class CategoriesController {
         get("/sold", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
             List<Advert> adverts = DBAdvert.findByCategory(CategoryType.SOLD);
+            Set<Advert> uniqueAdverts = new HashSet<>(adverts);
 
-            model.put("adverts", adverts);
+
+            model.put("adverts", uniqueAdverts);
             model.put("template", "templates/adverts/categories/sold.vtl");
 
             return new ModelAndView(model, "templates/layout.vtl");

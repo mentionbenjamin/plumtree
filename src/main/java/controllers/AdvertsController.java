@@ -31,8 +31,9 @@ public class AdvertsController {
             Map<String, Object> model = new HashMap<>();
 
             List<Advert> adverts = DBHelper.findAll(Advert.class);
+            Set<Advert> uniqueAdverts = new HashSet<>(adverts);
             model.put("template", "templates/adverts/index.vtl");
-            model.put("adverts", adverts);
+            model.put("adverts", uniqueAdverts);
 
             return new ModelAndView(model, "templates/layout.vtl");
         }, velocityTemplateEngine);
@@ -44,8 +45,10 @@ public class AdvertsController {
             Map<String, Object> model = new HashMap<>();
 
             List<Advert> sortedAdvertsByTimeDesc = DBAdvert.orderByTime(true);
+            Set<Advert> uniqueAdverts = new HashSet<>(sortedAdvertsByTimeDesc);
+
             model.put("template", "templates/adverts/displays/time_desc.vtl");
-            model.put("sortedAdvertsByTime", sortedAdvertsByTimeDesc);
+            model.put("sortedAdvertsByTime", uniqueAdverts);
 
             return new ModelAndView(model, "templates/layout.vtl");
         }, velocityTemplateEngine);
@@ -57,8 +60,10 @@ public class AdvertsController {
             Map<String, Object> model = new HashMap<>();
 
             List<Advert> sortedAdvertsByTimeAsc = DBAdvert.orderByTime(false);
+            Set<Advert> uniqueAdverts = new HashSet<>(sortedAdvertsByTimeAsc);
+
             model.put("template", "templates/adverts/displays/time_asc.vtl");
-            model.put("sortedAdvertsByTime", sortedAdvertsByTimeAsc);
+            model.put("sortedAdvertsByTime", uniqueAdverts);
 
             return new ModelAndView(model, "templates/layout.vtl");
         }, velocityTemplateEngine);
@@ -70,8 +75,10 @@ public class AdvertsController {
             Map<String, Object> model = new HashMap<>();
 
             List<Advert> sortedAdvertsByPriceDescending = DBAdvert.orderByPrice(true);
+            Set<Advert> uniqueAdverts = new HashSet<>(sortedAdvertsByPriceDescending);
+
             model.put("template", "templates/adverts/displays/price_desc.vtl");
-            model.put("sortedAdvertsByPrice", sortedAdvertsByPriceDescending);
+            model.put("sortedAdvertsByPrice", uniqueAdverts);
 
             return new ModelAndView(model, "templates/layout.vtl");
         }, velocityTemplateEngine);
@@ -83,8 +90,10 @@ public class AdvertsController {
             Map<String, Object> model = new HashMap<>();
 
             List<Advert> sortedAdvertsByPriceAscending = DBAdvert.orderByPrice(false);
+            Set<Advert> uniqueAdverts = new HashSet<>(sortedAdvertsByPriceAscending);
+
             model.put("template", "templates/adverts/displays/price_asc.vtl");
-            model.put("sortedAdvertsByPrice", sortedAdvertsByPriceAscending);
+            model.put("sortedAdvertsByPrice", uniqueAdverts);
 
             return new ModelAndView(model, "templates/layout.vtl");
         }, velocityTemplateEngine);
