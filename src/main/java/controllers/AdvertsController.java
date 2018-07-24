@@ -32,6 +32,7 @@ public class AdvertsController {
 
             List<Advert> adverts = DBHelper.findAll(Advert.class);
             Set<Advert> uniqueAdverts = new HashSet<>(adverts);
+
             model.put("template", "templates/adverts/index.vtl");
             model.put("adverts", uniqueAdverts);
 

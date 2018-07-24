@@ -108,8 +108,10 @@ public class CategoriesController {
         get("/house", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
             List<Advert> adverts = DBAdvert.findByCategory(CategoryType.HOUSE);
+            Set<Advert> uniqueAdverts = new HashSet<>(adverts);
 
-            model.put("adverts", adverts);
+
+            model.put("adverts", uniqueAdverts);
             model.put("template", "templates/adverts/categories/house.vtl");
 
             return new ModelAndView(model, "templates/layout.vtl");
@@ -122,8 +124,10 @@ public class CategoriesController {
         get("/misc", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
             List<Advert> adverts = DBAdvert.findByCategory(CategoryType.MISC);
+            Set<Advert> uniqueAdverts = new HashSet<>(adverts);
 
-            model.put("adverts", adverts);
+
+            model.put("adverts", uniqueAdverts);
             model.put("template", "templates/adverts/categories/misc.vtl");
 
             return new ModelAndView(model, "templates/layout.vtl");
