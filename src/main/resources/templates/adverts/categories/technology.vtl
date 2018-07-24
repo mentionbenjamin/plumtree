@@ -1,36 +1,122 @@
-<h1>Technology</h1>
 
-<a href="/adverts/new">Create new advert</a>
-<br>
-<a href="/adverts">All</a>
-<a href="/technology">Technology</a>
-<a href="/fashion">Fashion</a>
-<a href="/garden">Garden</a>
-<a href="/transport">Transport</a>
-<a href="/sold">Sold</a>
+<header class="plumtree-logo-filtered">
+    plumtree
+</header>
 
-<div>
-    <table>
-        <tr>
-            <th>Title</th>
-            <th>Description</th>
-            <th>Price</th>
-            <th>Image</th>
-            <th>Time Posted</th>
-        </tr>
-          #foreach($advert in $adverts)
-                #if($advert.getDeleted())
 
-                #else
-                    <tr>
-                        <td>$advert.getTitle()</td>
-                        <td>$advert.getDescription()</td>
-                        <td>$advert.getPrice()</td>
-                        <td><img src="$advert.getImagePath()"/></td>
-                        <td>$advert.getFormattedTimestamp()</td>
-                        <td><a href="/adverts/$advert.getId()">view advert</a></td>
-                    </tr>
-                #end
-                #end
-    </table>
+
+<div class="page-layout-container">
+
+    <div class="post-section">
+    </div>
+
+
+    <br><br>
+
+    <div class="categories-section">
+        <div class="categories-container">
+            <div class="cat-item-1" href="#"><a href="/adverts"><div class="category-all">ALL</div></a></div>
+            <div class="cat-item-2" href="#"><a href="/technology"><div class="category-tech">TECHNOLOGY</div></a></div>
+            <div class="cat-item-3" href="#"><a href="/fashion"><div class="category-clothing">CLOTHING</div></a></div>
+            <div class="cat-item-4" href="#"><a href="/misc"><div class="category-misc">MISCELLANEOUS</div></a></div>
+            <div class="cat-item-5" href="#"><a href="/adverts/new"><div class="category-post">POST</div></a></div>
+            <!-- SORT -->
+            <div class="cat-item-6">
+
+                <div class="category-sort">
+                    <div class="sort-item-left">
+                        <!-- - SORT BY COST/DATE START --->
+                        <input type="checkbox" id="click-sort">
+                        <label for="click-sort">
+
+                            <div class="sort-left">
+                                <div class="sort-container-cost">
+                                    <a href="/adverts/sorted-by-price-asc"><img class="sort-up" src="/images/up-icon.svg"/></a>
+                                    <div class="sort-cost">COST</div>
+                                    <a href="/adverts/sorted-by-price-desc"><img class="sort-down" src="/images/down-icon.svg"/></a>
+                                </div>
+                            </div>
+
+                            <div class="sort-middle">
+                                <img class="sort-sort-up" src="/images/up-icon.svg"/>
+                                <div class="sort-sort">SORT</div>
+                                <img class="sort-sort-down" src="/images/down-icon.svg"/>
+                            </div>
+
+                            <div class="sort-right">
+                                <div class="sort-container-date">
+                                    <a href="/adverts/sorted-by-time-asc"><img class="sort-up" src="/images/up-icon.svg"/></a>
+                                    <div class="sort-date">DATE</div>
+                                    <a href="/adverts/sorted-by-time-desc"><img class="sort-down" src="/images/down-icon.svg"/></a>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+                    <!--- SORT BY COST/DATE END - -->
+                </div>
+            </div>
+
+            <div class="cat-item-7" href="#"><a href="/transport"><div class="category-transport">TRANSPORT</div></a></div>
+            <!-- category-kitchen should become category-garden -->
+            <div class="cat-item-8" href="#"><a href="/garden"><div class="category-kitchen">GARDEN</div></a></div>
+            <div class="cat-item-9" href="#"><a href="/house"><div class="category-house">HOUSE</div></a></div>
+            <div class="cat-item-10" href="#"><a href="/sold"><div class="category-sold">SOLD</div></a></div>
+            <!-- SEARCH -->
+            <form method="post">
+                <div class="cat-item-11">
+                    <div class="category-search">
+                        <div id="search-container">
+                            <input class="input-box" type="text" name="search-results" placeholder="search away...">
+                            <span></span>
+                            <input type="image" name="submit" class="submit" src="/images/search-icon.svg" formaction="/adverts/search/title" alt="Submit">
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <!-- SORT -->
+            <div class="cat-item-12"><div class="category-sort"></div></div>
+        </div>
+    </div>
+
+
+
+    <div class="adverts-section">
+        <div class="adverts-container">
+            #foreach($advert in $adverts)
+
+            <a href="/adverts/$advert.getId()">
+                <div class="advertcontainer">
+                    <img src="$advert.getImagePath()" class="advertimage">
+
+                    <div class="advert-info-container">
+                        <div class="advert-info-backlay"></div>
+                        <div class="advert-category">
+                            #foreach($category in $advert.giveValuesOfAllCategories())
+                            $category.toUpperCase()
+                            #end
+                        </div>
+                        <div class="adverttitle">$advert.getTitle()</div>
+                        <div class="advertprice">£ $advert.getPrice()</div>
+                    </div>
+                    <div class="overlay-container">
+                        <div class="overlay-child">
+                            <img src="/images/zoom-in.svg" style="width:60px;"></div>
+                    </div>
+                </div>
+            </a>
+
+
+            #end
+        </div>
+    </div>
+
+    <!--  ADVERTS START HERE  -->
+
+    <div class="sort-section">
+        <div class="sort-post-container">
+
+        </div>
+
+    </div>
+
 </div>
