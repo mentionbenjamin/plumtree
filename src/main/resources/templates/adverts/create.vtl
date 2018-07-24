@@ -1,27 +1,199 @@
-<h1>Create Advert</h1>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/create_style.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Berkshire+Swash" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700" rel="stylesheet">
+</head>
+
+<body>
+
+<header class="plumtree-logo">
+    plumtree
+</header>
+
+<br><br>
+
+<div class="grid-container">
+    <div class="header-container">
+        <header class="parent-header-text">
+            <i>So, what's to track..?</i>
+        </header>
+
+        <header class="child-header-text">
+            share key information to help keep track of your sales.
+            <br>
+            be descriptive—your future self thanks you.
+        </header>
+    </div>
+
+    <form action="/adverts" method="post">
+
+    <div class="title-container">
+        <div id="input-box-container">
+            <input class="input-box" type="text" textarea name="text-area" placeholder="add a title here..."></textarea><span></span>
+        </div>
+    </div>
+
+    <div class="description-container">
+        <div id="input-box-container">
+            <input class="input-box" type="text" textarea name="text-area" placeholder="share the deets then..."></textarea><span></span>
+        </div>
+    </div>
+
+    <div class="image-path-container">
+        <div id="input-box-container">
+            <input class="input-box" type="text" textarea name="text-area" placeholder="so what's the image path?"></textarea><span></span>
+        </div>
+    </div>
+
+    <div class="price-container">
+        <div id="input-box-container">
+            <input class="input-box" type="text" textarea name="text-area" placeholder="price..."></textarea><span></span>
+        </div>
+    </div>
 
 
-<form action="/adverts" method="post">
 
-    <label for="title">Title</label>
-    <input class="inputbox" id="title" type="text" name="title" required>
 
-    <label for="description">Description</label>
-    <input class="inputbox" id="description" type="text" name="description" required>
 
-    <label for="price">Price</label>
-    <input class="inputbox" id="price" type="number" name="price" required>
 
-    <label for="image-path">Image</label>
-    <input class="inputbox" id="image-path" type="text" name="image-path" required>
+    <div class="category-container">
 
-    #foreach($category in $categories)
-    <label for="$category.getCategory()">
-    <input type="checkbox" id="$category.getCategory()" name="$category.getCategory()" value="$category.getCategory()">
-    $category.getCategory()
-    </label>
-    #end
-    <input type="submit" value="Post" class="button">
+        <!--- CATEGORIES START --->
 
-</form>
+        <form>
+
+            <div class="main-category-container">
+
+                <div>
+                    <input type="checkbox" id="thursday" />
+                    <label for="thursday">TECHNOLOGY</label>
+                </div>
+
+                <div>
+                    <input type="checkbox" id="tuesday" />
+                    <label for="tuesday">CLOTHING</label>
+                </div>
+
+                <div>
+                    <input type="checkbox" id="monday" />
+                    <label for="monday">TRANSPORT</label>
+                </div>
+
+                <div>
+                    <input type="checkbox" id="wednesday" />
+                    <label for="wednesday">GARDEN</label>
+                </div>
+
+                <div>
+                    <input type="checkbox" id="friday" />
+                    <label for="friday">HOUSE</label>
+                </div>
+
+                <div>
+                    <input type="checkbox" id="friday" />
+                    <label for="friday">MISCELLANEOUS</label>
+                </div>
+
+            </div>
+
+
+            <!--- CATEGORIES END --->
+
+    </div>
+
+    <div class="save-container">
+        <input type="submit" value="SAVE">
+    </div>
+
+    <div class="cancel-container">
+        <a class="cancel-button" href="/homepage">CANCEL</a>
+    </div>
+
+    </form>
+
+
+
+
+
+</div>
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<h1>Create Advert</h1>-->
+
+
+<!--<form action="/adverts" method="post">-->
+
+    <!--<label for="title">Title</label>-->
+    <!--<input class="inputbox" id="title" type="text" name="title" required>-->
+
+    <!--<label for="description">Description</label>-->
+    <!--<input class="inputbox" id="description" type="text" name="description" required>-->
+
+    <!--<label for="price">Price</label>-->
+    <!--<input class="inputbox" id="price" type="number" name="price" required>-->
+
+    <!--<label for="image-path">Image</label>-->
+    <!--<input class="inputbox" id="image-path" type="text" name="image-path" required>-->
+
+    <!--#foreach($category in $categories)-->
+    <!--<label for="$category.getCategory()">-->
+    <!--<input type="checkbox" id="$category.getCategory()" name="$category.getCategory()" value="$category.getCategory()">-->
+    <!--$category.getCategory()-->
+    <!--</label>-->
+    <!--#end-->
+    <!--<input type="submit" value="Post" class="button">-->
+
+<!--</form>-->
 
