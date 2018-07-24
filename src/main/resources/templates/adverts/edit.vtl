@@ -1,35 +1,254 @@
-<h1>Edit Advert</h1>
+<!DOCTYPE html>
+<html lang="eng" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/create_style.css">
 
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Berkshire+Swash" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700" rel="stylesheet">
+</head>
+
+<body>
 
 <form action="/adverts" method="post">
 
-    <label for="title">Title</label>
-    <input class="inputbox" id="title" type="text" name="title" value="$advert.getTitle()" required>
 
-    <label for="description">Description</label>
-    <input class="inputbox" id="description" type="text" name="description" value="$advert.getDescription()" required>
+    <div class="grid-container">
+        <div class="header-container">
+            <header class="parent-header-text">
+                <i>Need to make a change?</i>
+            </header>
 
-    <label for="price">Price</label>
-    <input class="inputbox" id="price" type="number" name="price" value="$advert.getPrice()" required>
+            <header class="child-header-text">
+                share key information to help keep track of your sales.
+                <br>
+                be descriptive—your future self thanks you.
+            </header>
+        </div>
 
-    <label for="image-path">Image</label>
-    <input class="inputbox" id="image-path" type="text" name="image-path" value="$advert.getImagePath()" required>
+
+        <div class="title-container">
+            <div class="input-box-container">
+                <input id="title" required class="input-box" type="text" textarea name="title" value="$advert.getTitle()"></textarea><span></span>
+            </div>
+        </div>
+
+        <div class="description-container">
+            <div class="input-box-container">
+                <input id="description" required class="input-box" type="text" textarea name="description" value="$advert.getDescription()"></textarea><span></span>
+            </div>
+        </div>
+
+        <div class="image-path-container">
+            <div class="input-box-container">
+                <input id="image-path" required class="input-box" type="text" textarea name="image-path" value="$advert.getImagePath()"></textarea><span></span>
+            </div>
+        </div>
+
+        <div class="price-container">
+            <div class="input-box-container">
+                <input id="price" required class="input-box" type="text" textarea name="price" value="$advert.getPrice()"></textarea><span></span>
+            </div>
+        </div>
 
 
-    #foreach($category in $categories)
-    #if($advert.hasCategory($category))
-    <label for="$category.getCategory()">
-        <input checked type="checkbox" id="$category.getCategory()" name="$category.getCategory()" value="$category.getCategory()">
-        $category.getCategory()
-    </label>
-    #else
-    <label for="$category.getCategory()">
-        <input type="checkbox" id="$category.getCategory()" name="$category.getCategory()" value="$category.getCategory()">
-        $category.getCategory()
-    </label>
-    #end
-    #end
 
-    <input type="submit" value="Post" class="button">
 
+
+
+        <div class="category-container">
+
+            <!--- CATEGORIES START --->
+
+
+            <div class="main-category-container">
+
+                #foreach($category in $categories)
+                #if($category.getCategory() == "Sold")
+
+                #elseif($advert.hasCategory($category))
+
+                <div>
+                    <input checked type="checkbox" id="$category.getCategory()" name="$category.getCategory()" />
+                    <label for="$category.getCategory()">$category.getCategory().toUpperCase()</label>
+                </div>
+
+                #else
+
+                <div>
+                    <input type="checkbox" id="$category.getCategory()" name="$category.getCategory()" />
+                    <label for="$category.getCategory()">$category.getCategory().toUpperCase()</label>
+                </div>
+
+                #end
+                #end
+
+
+            </div>
+
+
+            <!--- CATEGORIES END --->
+
+        </div>
+
+        <div class="save-container">
+            <input type="submit" value="EDIT">
+        </div>
+
+        <div class="cancel-container">
+            <a class="cancel-button" href="/adverts/$advert.getId()">CANCEL</a>
+        </div>
+
+
+
+
+
+
+    </div>
+
+    <header class="plumtree-logo">
+        plumtree
+    </header>
+
+    <br><br>
 </form>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<h1>Create Advert</h1>-->
+
+
+<!--<form action="/adverts" method="post">-->
+
+<!--<label for="title">Title</label>-->
+<!--<input class="inputbox" id="title" type="text" name="title" required>-->
+
+<!--<label for="description">Description</label>-->
+<!--<input class="inputbox" id="description" type="text" name="description" required>-->
+
+<!--<label for="price">Price</label>-->
+<!--<input class="inputbox" id="price" type="number" name="price" required>-->
+
+<!--<label for="image-path">Image</label>-->
+<!--<input class="inputbox" id="image-path" type="text" name="image-path" required>-->
+
+<!--#foreach($category in $categories)-->
+<!--<label for="$category.getCategory()">-->
+
+
+<!--<input type="checkbox" id="$category.getCategory()" name="$category.getCategory()" value="$category.getCategory()">-->
+<!--$category.getCategory()-->
+
+
+<!--</label>-->
+<!--#end-->
+<!--<input type="submit" value="Post" class="button">-->
+
+<!--</form>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<h1>Edit Advert</h1>-->
+
+
+<!--<form action="/adverts" method="post">-->
+
+    <!--<label for="title">Title</label>-->
+    <!--<input class="inputbox" id="title" type="text" name="title" value="$advert.getTitle()" required>-->
+
+    <!--<label for="description">Description</label>-->
+    <!--<input class="inputbox" id="description" type="text" name="description" value="$advert.getDescription()" required>-->
+
+    <!--<label for="price">Price</label>-->
+    <!--<input class="inputbox" id="price" type="number" name="price" value="$advert.getPrice()" required>-->
+
+    <!--<label for="image-path">Image</label>-->
+    <!--<input class="inputbox" id="image-path" type="text" name="image-path" value="$advert.getImagePath()" required>-->
+
+
+    <!--#foreach($category in $categories)-->
+
+    <!--#if($advert.hasCategory($category))-->
+
+    <!--<label for="$category.getCategory()">-->
+        <!--<input checked type="checkbox" id="$category.getCategory()" name="$category.getCategory()" value="$category.getCategory()">-->
+        <!--$category.getCategory()-->
+    <!--</label>-->
+    <!--#else-->
+    <!--<label for="$category.getCategory()">-->
+        <!--<input type="checkbox" id="$category.getCategory()" name="$category.getCategory()" value="$category.getCategory()">-->
+        <!--$category.getCategory()-->
+    <!--</label>-->
+    <!--#end-->
+    <!--#end-->
+
+    <!--<input type="submit" value="Post" class="button">-->
+
+<!--</form>-->
