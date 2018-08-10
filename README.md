@@ -84,12 +84,3 @@ Before you start this project, write an MVP and potential extensions. You **must
 * ***DO NOT USE ANY FRAMEWORKS*** - this includes Java Swing and similar packages. If in any doubt ask an instructor.
 * There will still be stand-up at 9:15am every morning like normal (10am on Friday) - you are still expected to be in every day during the project.
 * If you have an idea for a project outwith the specs defined above then please discuss this with the instructors before going ahead.
-
-
-## PDA Reminder
-
-Remember to gather evidence for your PDA this week. This should only take 5 minutes:
-
-- Go to your [PDA Checklist](https://github.com/codeclan/pda/blob/master/Student%20Checklist/Student%20Checklist.pdf)
-
-- Submit your PDA evidence (screenshots, etc.) to your own PDA repo
