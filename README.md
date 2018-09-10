@@ -38,5 +38,5 @@ Planning, experimentation, collaboration, time management, GIT, BE/FE integratio
 Download & unpack folder
 Open in intelliJ IDE
 Run 'MainController'
-Browser  = http://localhost:4567/adverts
+Load http://localhost:4567/adverts
 ```
