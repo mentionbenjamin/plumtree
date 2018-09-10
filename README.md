@@ -6,7 +6,7 @@ Built a personal inventory app where the user can create, edit & delete adverts.
 ## Deadline
 6 days, followed by a presentation on the final day. 
 
-### Objectives
+## Objectives
 Planning, experimentation, collaboration, time management, GIT, BE/FE integration, consolidation, UX/UI.
 
 
