@@ -1,14 +1,7 @@
-# Track Yo'self
+# Plumtree
 
 ## Synopsis
-Built a personal inventory app where the user can create, edit & delete adverts. The user can categorise adverts according to their type and can search their inventory. Collaboration with Gary Muir.
-
-## Deadline
-6 days, followed by a presentation on the final day. 
-
-## Objectives
-Planning, experimentation, collaboration, time management, GIT, BE/FE integration, consolidation, UX/UI.
-
+Built a personal inventory app where the user can create, edit & delete adverts. The user can categorise adverts according to their type and can search their inventory. Collaboration with Gary Muir. Built in 6 days, followed by a presentation on the final day. 
 
 ## Built with
 * Java
